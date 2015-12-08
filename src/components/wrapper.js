@@ -18,11 +18,10 @@ export default class Home extends Component {
 
     render() {
         return (
-            <div style={{height: '500px', position: 'relative'}}>
+            <div>
                 <Layout style={{background: 'url(http://www.getmdl.io/assets/demos/transparent.jpg) center / cover'}}>
                     <Header transparent title="Title" style={{color: 'white'}}>
                         <Navigation>
-
                             {this.props.loginState.isLoggedIn ? (
                                 <Link to="/auth">Logout</Link>
                             ) : (
