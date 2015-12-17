@@ -13,7 +13,7 @@ import {PortfolioGrid} from './components/portfolio/portfolioGrid';
 export default (
     <Route>
         <Route path="/" component={Wrapper}>
-        	<IndexRoute component={Home}/>
+            <IndexRoute component={Home}/>
             <Route path="portfolio" component={PortfolioGrid}/>
             <Route path="auth" component={Auth}/>
             <Route path="about" component={About}/>

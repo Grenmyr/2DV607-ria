@@ -18,7 +18,6 @@ const auth = (user) => {
 };
 
 export default {
-
     listenToAuthState() {
         return (dispatch) => {
             fireBaseRef.onAuth((authData) => {

@@ -5,16 +5,16 @@ import { ProgressBar } from 'react-mdl';
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 
-class SpinnerComponent extends Component{
+class SpinnerComponent extends Component {
 
-    render(){
+    render() {
         return (
             <div>
                 {this.props.spinner.spinning ? (
 
-                    <ProgressBar indeterminate style= {{ margin: '0 auto'}} />
+                    <ProgressBar indeterminate style={{ margin: '0 auto'}}/>
                 ) : (
-                        null
+                    null
                 )}
             </div>
         )

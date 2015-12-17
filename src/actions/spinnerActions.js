@@ -3,8 +3,8 @@
  */
 export default {
     startSpinner() {
-            dispatch({type: 'START_SPINNER'});
-        },
+        dispatch({type: 'START_SPINNER'});
+    },
     stopSpinner() {
         dispatch({type: 'STOP_SPINNER'});
     }

@@ -19,7 +19,7 @@ class Auth extends Component {
                   this.props.login(user);
                 }
             })
-          } />;
+          }/>;
         }
     }
 }
