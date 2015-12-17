@@ -16,6 +16,11 @@ Then
 
 #### Feel free to contribute if you like!
 ##### Prefer 4 space indention.  
+
+##### See issues for list of features i need,i also gladly take contributions outside listed issues.
+https://github.com/Grenmyr/2DV607-ria/issues
+
+
 Then fork repo and submit a pullrequest when done with changes.  
 1: navigate to root:   
 2: npm install   
