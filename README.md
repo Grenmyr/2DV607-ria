@@ -15,6 +15,7 @@ Then
 4: open browser localhost:8080   
 
 #### Feel free to contribute if you like!
+##### Prefer 4 space indention.  
 Then fork repo and submit a pullrequest when done with changes.  
 1: navigate to root:   
 2: npm install   
