@@ -7,19 +7,14 @@ import {
     CardText,
     CardActions
 } from 'react-mdl';
+import { cardStyles } from '../../css/customStyles';
 import Spinner from '../spinner';
 
 const styles = Object.freeze({
-    card: {
-        width: 320,
-        height: 320,
-        margin: 'auto'
-    },
-    cardTitle: {
-        background: `url(http://www.getmdl.io/assets/demos/dog.png)
-                        bottom right 15% no-repeat #46B6AC`,
-        color: 'Black'
-    },
+    card: cardStyles.card,
+    cardTitle: Object.assign({
+        color: '#fff'
+    }, cardStyles.cardTitle),
     textField: {
         width: 200
     }
@@ -30,10 +25,9 @@ export class Login extends Component {
     render() {
         return (
             <div>
-                <Card shadow={0} style={{width: '320px', height: '320px', margin: 'auto'}}>
+                <Card shadow={0} style={styles.card}>
                     <Spinner/>
-                    <CardTitle expand
-                               style={styles.cardTitle}>Email:fake@fakemail.com,
+                    <CardTitle expand style={styles.cardTitle}>Email:fake@fakemail.com,
                         Hint: Pass: 123</CardTitle>
                     <CardText>
                         <form onSubmit={(e) => {
@@ -60,7 +54,6 @@ export class Login extends Component {
         )
     }
 }
-
 
 Login.propTypes = {
     loginOnSubmit: PropTypes.func.isRequired

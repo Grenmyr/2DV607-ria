@@ -1,13 +1,10 @@
 import React, { Component, PropTypes} from 'react';
 import { Button, Card, CardTitle, CardText } from 'react-mdl';
 import { Link }  from 'react-router';
+import { cardStyles } from '../../css/customStyles';
 
 const styles = Object.freeze({
-    card: {
-        width: 320,
-        height: 320,
-        margin: 'auto'
-    },
+    card: cardStyles.card,
     button: {
         float: 'left'
     }
@@ -22,8 +19,7 @@ export const Logout = ({logout}) => (
                         No I rather stay
                     </Button>
                 </Link>
-                <Button primary style={styles.button}
-                        onClick={logout}>
+                <Button primary style={styles.button} onClick={logout}>
                     Logout
                 </Button>
             </CardText>
