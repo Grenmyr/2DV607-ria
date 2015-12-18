@@ -1,13 +1,18 @@
-/**
- * Created by dav on 2015-12-03.
- */
 import React from 'react';
-import {Card,CardTitle,CardText,CardActions,Button} from 'react-mdl'
+import { Card, CardTitle, CardText, CardActions, Button } from 'react-mdl';
+import { cardStyles } from '../css/customStyles';
+
+const styles = Object.freeze({
+    card: cardStyles.card,
+    cardTitle: Object.assign({
+        alignItems: 'flex-start',
+        color: '#fff'
+    }, cardStyles.cardTitle)
+});
 
 export const About = () => (
-    <Card shadow={0} style={{width: '320px', height: '320px', margin: 'auto'}}>
-        <CardTitle expand
-                   style={{ alignItems: 'flex-start', color: '#fff', background: 'url(http://www.getmdl.io/assets/demos/dog.png) bottom right 15% no-repeat #46B6AC'}}>David
+    <Card shadow={0} style={styles.card}>
+        <CardTitle expand style={styles.cardTitle}>David
             Grenmyr</CardTitle>
         <CardText>
             <ul>

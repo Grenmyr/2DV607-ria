@@ -1,12 +1,19 @@
-import React from 'react'
-import {Card,CardTitle,CardText,CardActions,Button} from 'react-mdl'
+import React from 'react';
+import { Card, CardTitle, CardText, CardActions, Button } from 'react-mdl';
+import { cardStyles } from '../css/customStyles';
 
-const Home = ()=> (
-    <Card shadow={0} style={{width: '320px', height: '320px', margin: 'auto'}}>
-        <CardTitle expand
-                   style={{  color: '#fff', background: 'url(http://www.getmdl.io/assets/demos/dog.png) bottom right 15% no-repeat #46B6AC'}}>Welcome</CardTitle>
+const styles = Object.freeze({
+    card: cardStyles.card,
+    cardTitle: Object.assign({
+        color: '#fff',
+    }, cardStyles.cardTitle)
+});
+
+const Home = () => (
+    <Card shadow={0} style={styles.card}>
+        <CardTitle expand style={styles.cardTitle}>Welcome</CardTitle>
         <CardText>
-            ...to my amazing homepage!.eew
+            ...to my amazing homepage!
         </CardText>
     </Card>
 );

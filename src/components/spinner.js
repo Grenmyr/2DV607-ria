@@ -1,8 +1,5 @@
-/**
- * Created by dav on 2015-12-01.
- */
 import { ProgressBar } from 'react-mdl';
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 class SpinnerComponent extends Component {
