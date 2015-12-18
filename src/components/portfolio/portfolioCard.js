@@ -1,6 +1,3 @@
-/**
- * Created by dav on 2015-12-03.
- */
 import React, {Component} from 'react'
 import {Card,CardText,CardTitle} from 'react-mdl'
 

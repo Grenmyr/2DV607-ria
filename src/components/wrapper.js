@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Link }  from 'react-router';
 import { connect } from 'react-redux';
 import { Layout, Header, Navigation, Drawer, Content, Button, Card } from 'react-mdl';
-import Spinner from './spinner';
 
 const styles = Object.freeze({
     wrapper: {
@@ -45,7 +44,6 @@ export default class Home extends Component {
                         </Navigation>
                     </Drawer>
                     <Content>
-                        <Spinner/>
                         {this.props.children}
                     </Content>
                 </Layout>

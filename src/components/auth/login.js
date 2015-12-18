@@ -7,6 +7,7 @@ import {
     CardText,
     CardActions
 } from 'react-mdl';
+import Spinner from '../spinner';
 
 const styles = Object.freeze({
     card: {
@@ -22,7 +23,7 @@ const styles = Object.freeze({
     textField: {
         width: 200
     }
-})
+});
 
 export class Login extends Component {
 
@@ -30,6 +31,7 @@ export class Login extends Component {
         return (
             <div>
                 <Card shadow={0} style={{width: '320px', height: '320px', margin: 'auto'}}>
+                    <Spinner/>
                     <CardTitle expand
                                style={styles.cardTitle}>Email:fake@fakemail.com,
                         Hint: Pass: 123</CardTitle>
