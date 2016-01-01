@@ -13,7 +13,6 @@ var config = {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 loaders: [
-                    'react-hot',
                     'babel?' + JSON.stringify({
                         presets: ["react", "es2015", "stage-1"],
                     })
