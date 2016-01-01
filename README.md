@@ -2,27 +2,12 @@
 
 #### This is my page for ria course.
 
-#### 
-Runnable version of my helloWorld [app]: (http://grenmyr.github.io/HelloWorldReact/)    
-And repository is here: [app:master](https://github.com/Grenmyr/HelloWorldReact/tree/master)
+##### This branch is my experiment
 
-## Main project
+##### each commit is a different environment setup. Each commit also does following..
 
-Then   
-1: navigate to root:   
-2: npm install   
-3: npm run start   
-4: open browser localhost:8080   
+* Result time in seconds to run a localhost build of the project. This is repeated 3 times for each environment.
+* Result in time to build a js file of project.
 
-#### Feel free to contribute if you like!
-##### Prefer 4 space indention.  
+##### Additional tests for hot load,watcher or similar techniques.
 
-##### See issues for list of features i need,i also gladly take contributions outside listed issues.
-https://github.com/Grenmyr/2DV607-ria/issues
-
-
-Then fork repo and submit a pullrequest when done with changes.  
-1: navigate to root:   
-2: npm install   
-3: npm run start     
-4: open browser localhost:8080   
