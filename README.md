@@ -11,4 +11,4 @@
 * If setup support automatic refresh on change, three tests with refresh is also done, by changing a string in a component, measuring how long it took for it to refresh.
 * 
 
-Results can be found [here](https://docs.google.com/spreadsheets/d/1WxUgUX78jDyusxphZhkO5X21UW-TLies9rh1b0jpbnM/edit?usp=sharing)
+##### Results can be found [here](https://docs.google.com/spreadsheets/d/1WxUgUX78jDyusxphZhkO5X21UW-TLies9rh1b0jpbnM/edit?usp=sharing)
