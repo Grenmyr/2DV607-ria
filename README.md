@@ -4,9 +4,8 @@
 
 ##### This branch is my experiment
 
-##### each commit is a different environment setup. Each commit also does following..
-* Result in time to build a js file of project.
+##### each commit is a different environment setup.
+* Each setup run build script three times and measure how long it take to build the react code.
 
 ##### Additional tests for hot load,watcher or similar techniques.
-
-* Result in time to update content.
+* If setup support automatic refresh on change, three tests with refresh is also done, by changing a string in a component, measuring how long it took for it to refresh.
