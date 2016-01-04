@@ -14,4 +14,21 @@ const rootReducer = combineReducers({
 
 const store = applyMiddleware(thunk)(createStore)(rootReducer, initialState());
 
+
+if (module.onReload) {
+    module.onReload(() => {
+        const nextReducer = combineReducers({
+            loginState: authReducer,
+            userState: userReducer,
+            spinner: spinnerReducer
+        });
+        store.replaceReducer( nextReducer);
+
+        // return true to indicate that this module is accepted and
+        // there is no need to reload its parent modules
+        return true
+    });
+}
+
+
 export default store;
