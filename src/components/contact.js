@@ -13,7 +13,7 @@ const styles = Object.freeze({
 
 export const Contact = () => (
     <Card shadow={0} style={styles.card}>
-        <CardTitle expand style={styles.cardSubTitle}>Contacts</CardTitle>
+        <CardTitle expand style={styles.cardTitle}>Contacts</CardTitle>
         <CardText>
 
             <div style={styles.cardRow}>
