@@ -6,24 +6,28 @@ const styles = Object.freeze({
     card: cardStyles.card,
     cardTitle: Object.assign({
         color: '#fff'
-    }, cardStyles.cardTitle)
+    }, cardStyles.cardTitle),
+    cardRow: cardStyles.cardRow,
+    cardRowTitle: cardStyles.cardRowTitle
 });
 
 export const Contact = () => (
     <Card shadow={0} style={styles.card}>
-        <CardTitle expand style={styles.cardTitle}>Contacts</CardTitle>
+        <CardTitle expand style={styles.cardSubTitle}>Contacts</CardTitle>
         <CardText>
-            <ul>
-                <li>
-                    Email: david.grenmyr@hotmail.com
-                </li>
-                <li>
-                    Phone: 070 259 6668
-                </li>
-                <li>
-                    Skype: david.grenmyr
-                </li>
-            </ul>
+
+            <div style={styles.cardRow}>
+                <span style={styles.cardRowTitle}>Email: </span>david.grenmyr@hotmail.com
+            </div>
+
+            <div style={styles.cardRow}>
+                <span style={styles.cardRowTitle}>Phone: </span> 070 259 6668
+            </div>
+
+            <div style={styles.cardRow}>
+                <span style={styles.cardRowTitle}>Skype: </span> david.grenmyr
+            </div>
+
         </CardText>
     </Card>
 );

@@ -10,7 +10,9 @@ const styles = Object.freeze({
     cardTitle: Object.assign({
         height: 176,
         color: '#fff'
-    }, cardStyles.cardTitle)
+    }, cardStyles.cardTitle),
+    cardRow: cardStyles.cardRow,
+    cardRowTitle: cardStyles.cardRowTitle
 });
 
 export class PortfolioCard extends Component {
@@ -20,26 +22,24 @@ export class PortfolioCard extends Component {
                 <Card>
                     <CardTitle style={styles.cardTitle}>TODO: implement backend in firebase to load portfolios</CardTitle>
                     <CardText>
-                        I will need data from firebase look something like:
-                        <ul>
-                            Object start
-                            <li>
-                                imageUrl : url/to/image,
-                            </li>
-                            <li>
-                                text: EX: This project was a portfolio project to publish all my works in.,
-                            </li>
-                            <li>
-                                techniques: [Javascript,React,Redux,Firebase],
-                            </li>
-                            <li>
-                                employer:
-                                    name: LNU,
-                                    url: lnu.se
-                                    contact: david.waller@hismail.com
-                            </li>
-                            Object end
-                        </ul>
+                        <div style={styles.cardRowTitle} >I will need data from firebase look something like:</div>
+
+                        <div style={styles.cardRow}>
+                            <span style={styles.cardRowTitle}>imageUrl: </span>david.grenmyr@hotmail.com
+                        </div>
+                        <div style={styles.cardRow}>
+                            <span style={styles.cardRowTitle}>text: </span>This project was a portfolio project to publish all my works in.
+                        </div>
+                        <div style={styles.cardRow}>
+                            <span style={styles.cardRowTitle}>techniques: </span>[Javascript,React,Redux,Firebase]
+                        </div>
+                        <div style={styles.cardRow}>
+                            <span style={styles.cardRowTitle}>techniques: </span>[Javascript,React,Redux,Firebase]
+                        </div>
+                        <div style={styles.cardRow}>
+                            <span style={styles.cardRowTitle}>employer: </span> name: LNU, url: lnu.se, contact: david.waller@hismail.com
+                        </div>
+
                     </CardText>
                 </Card>
             </div>
