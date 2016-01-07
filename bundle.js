@@ -43315,7 +43315,7 @@
 	        { shadow: 0, style: styles.card },
 	        _react2.default.createElement(
 	            _reactMdl.CardTitle,
-	            { expand: true, style: styles.cardSubTitle },
+	            { expand: true, style: styles.cardTitle },
 	            'Contacts'
 	        ),
 	        _react2.default.createElement(
