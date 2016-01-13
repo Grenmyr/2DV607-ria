@@ -13,7 +13,7 @@ const Home = () => (
     <Card shadow={0} style={styles.card}>
         <CardTitle expand style={styles.cardTitle}>Welcome</CardTitle>
         <CardText>
-            ...to my amazing homepage!
+            ...to my amazing homepage!!!!
         </CardText>
     </Card>
 );

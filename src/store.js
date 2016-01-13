@@ -4,12 +4,14 @@ import initialState from './initialState';
 import authReducer from './reducers/authenticate';
 import userReducer from './reducers/user';
 import spinnerReducer from './reducers/spinner';
+import portfolioCard from './reducers/portfolio'
 
 // Hidden string dependancy on naming of object to the object name located in the initialState.
 const rootReducer = combineReducers({
     loginState: authReducer,
     userState: userReducer,
-    spinner: spinnerReducer
+    spinner: spinnerReducer,
+    portfolioCard: portfolioCard
 });
 
 const store = applyMiddleware(thunk)(createStore)(rootReducer, initialState());
