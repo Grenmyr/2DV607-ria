@@ -9,6 +9,11 @@ export const cardStyles = Object.freeze({
         height: 640,
         margin: 'auto'
     },
+    smallCard: {
+        width: 320,
+        height: 160,
+        margin: 'auto'
+    },
     cardTitle: {
         background: `url(http://www.getmdl.io/assets/demos/dog.png)
                         bottom right 15% no-repeat #46B6AC`

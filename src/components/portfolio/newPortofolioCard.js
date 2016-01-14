@@ -6,9 +6,11 @@ import { cardStyles } from '../../css/customStyles';
 import { connect } from 'react-redux';
 import submitActions from '../../actions/submitActions'
 import {Textfield,Button,Card,CardTitle,CardText,CardActions} from 'react-mdl';
+import { Link }  from 'react-router';
 
 const styles = Object.freeze({
-    card: cardStyles.bigCard,
+    bigCard: cardStyles.bigCard,
+    smallCard: cardStyles.smallCard,
     cardTitle: Object.assign({
         color: '#fff'
     }, cardStyles.cardTitle),
@@ -36,7 +38,9 @@ class NewPortfolioCard extends Component {
     render(){
         return (
             <div style={styles.wrapper}>
-                <Card shadow={0} style={styles.card}>
+                {this.props.loginState.isLoggedIn ? (
+                    <Card shadow={0} style={styles.bigCard}>
+
                         <CardTitle style={styles.cardTitle}>New PortfolioCard</CardTitle>
                         <CardText>
                             <form onSubmit={(e) => {
@@ -86,6 +90,14 @@ class NewPortfolioCard extends Component {
 
                         </CardText>
                     </Card>
+                ) : (
+                    <Card shadow={0} style={styles.smallCard}>
+                        <CardTitle style={styles.cardTitle}>Access Denied</CardTitle>
+                        <CardText>You need to be logged in to create new Portfolio Cards</CardText>
+                        <Button><Link to="/auth">Log in</Link></Button>
+                    </Card>
+                )}
+
             </div>
         )
     }

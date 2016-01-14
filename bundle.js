@@ -34099,6 +34099,11 @@
 	        height: 640,
 	        margin: 'auto'
 	    },
+	    smallCard: {
+	        width: 320,
+	        height: 160,
+	        margin: 'auto'
+	    },
 	    cardTitle: {
 	        background: 'url(http://www.getmdl.io/assets/demos/dog.png)\n                        bottom right 15% no-repeat #46B6AC'
 	    },
@@ -43554,6 +43559,8 @@
 	
 	var _reactMdl = __webpack_require__(418);
 	
+	var _reactRouter = __webpack_require__(337);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -43565,7 +43572,8 @@
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
 	
 	var styles = Object.freeze({
-	    card: _customStyles.cardStyles.bigCard,
+	    bigCard: _customStyles.cardStyles.bigCard,
+	    smallCard: _customStyles.cardStyles.smallCard,
 	    cardTitle: Object.assign({
 	        color: '#fff'
 	    }, _customStyles.cardStyles.cardTitle),
@@ -43604,9 +43612,9 @@
 	            return _react2.default.createElement(
 	                'div',
 	                { style: styles.wrapper },
-	                _react2.default.createElement(
+	                this.props.loginState.isLoggedIn ? _react2.default.createElement(
 	                    _reactMdl.Card,
-	                    { shadow: 0, style: styles.card },
+	                    { shadow: 0, style: styles.bigCard },
 	                    _react2.default.createElement(
 	                        _reactMdl.CardTitle,
 	                        { style: styles.cardTitle },
@@ -43667,6 +43675,28 @@
 	                                { type: 'submit' },
 	                                'Post Card'
 	                            )
+	                        )
+	                    )
+	                ) : _react2.default.createElement(
+	                    _reactMdl.Card,
+	                    { shadow: 0, style: styles.smallCard },
+	                    _react2.default.createElement(
+	                        _reactMdl.CardTitle,
+	                        { style: styles.cardTitle },
+	                        'Access Denied'
+	                    ),
+	                    _react2.default.createElement(
+	                        _reactMdl.CardText,
+	                        null,
+	                        'You need to be logged in to create new Portfolio Cards'
+	                    ),
+	                    _react2.default.createElement(
+	                        _reactMdl.Button,
+	                        null,
+	                        _react2.default.createElement(
+	                            _reactRouter.Link,
+	                            { to: '/auth' },
+	                            'Log in'
 	                        )
 	                    )
 	                )
