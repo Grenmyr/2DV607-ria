@@ -20,10 +20,9 @@ const styles = Object.freeze({
 });
 
 
-
 class NewPortfolioCard extends Component {
 
-    submit () {
+    submit() {
         const portfolioCard = {
             projectTitle: this.refs.projectTitle.refs.input.value,
             text: this.refs.text.refs.input.value,
@@ -32,10 +31,10 @@ class NewPortfolioCard extends Component {
             employerContact: this.refs.employerContact.refs.input.value,
             employerUrl: this.refs.employerUrl.refs.input.value
         };
-            this.props.submit(portfolioCard);
+        this.props.submit(portfolioCard);
     }
 
-    render(){
+    render() {
         return (
             <div style={styles.wrapper}>
                 {this.props.loginState.isLoggedIn ? (
@@ -124,4 +123,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 };
 
-export default connect(mapStateToProps,mapDispatchToProps)(NewPortfolioCard);
+export default connect(mapStateToProps, mapDispatchToProps)(NewPortfolioCard);
