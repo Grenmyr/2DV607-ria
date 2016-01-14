@@ -5,7 +5,8 @@ export default {
     submit(portfolioCard) {
         return async (dispatch) => {
             dispatch({type: 'START_SPINNER'});
-            let submit = await auth(portfolioCard);
+            console.log("In submitActions not implemented");
+            let submit = await notImplementedFunction(portfolioCard);
             if (submit.isSuccessful) {
                 dispatch({type: 'SUBMIT_PORTFOLIO_CARD'});
             } else {

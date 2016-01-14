@@ -41,6 +41,7 @@ export default class Home extends Component {
                             <Link to="/about">About me</Link>
                             <Link to="/contact">Contact me</Link>
                             <Link to="/portfolio">Portfolio</Link>
+                            <Link to="/newcard">New portfolio Card</Link>
                         </Navigation>
                     </Drawer>
                     <Content>

@@ -9,6 +9,7 @@ import Auth from './components/auth/auth';
 import {About} from './components/about';
 import {Contact} from './components/contact';
 import {PortfolioGrid} from './components/portfolio/portfolioGrid';
+import newPortfolioCard from './components/portfolio/newPortofolioCard';
 
 export default (
     <Route>
@@ -18,6 +19,7 @@ export default (
             <Route path="auth" component={Auth}/>
             <Route path="about" component={About}/>
             <Route path="contact" component={Contact}/>
+            <Route path="newcard" component={newPortfolioCard}/>
         </Route>
     </Route>
 );

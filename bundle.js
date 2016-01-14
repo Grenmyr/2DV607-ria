@@ -30490,11 +30490,12 @@
 	
 	var _portfolioGrid = __webpack_require__(479);
 	
+	var _newPortofolioCard = __webpack_require__(482);
+	
+	var _newPortofolioCard2 = _interopRequireDefault(_newPortofolioCard);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	/**
-	 * Created by dav on 2015-11-16.
-	 */
 	exports.default = _react2.default.createElement(
 	    _reactRouter.Route,
 	    null,
@@ -30505,10 +30506,13 @@
 	        _react2.default.createElement(_reactRouter.Route, { path: 'portfolio', component: _portfolioGrid.PortfolioGrid }),
 	        _react2.default.createElement(_reactRouter.Route, { path: 'auth', component: _auth2.default }),
 	        _react2.default.createElement(_reactRouter.Route, { path: 'about', component: _about.About }),
-	        _react2.default.createElement(_reactRouter.Route, { path: 'contact', component: _contact.Contact })
+	        _react2.default.createElement(_reactRouter.Route, { path: 'contact', component: _contact.Contact }),
+	        _react2.default.createElement(_reactRouter.Route, { path: 'newcard', component: _newPortofolioCard2.default })
 	    )
-	);
-	
+	); /**
+	    * Created by dav on 2015-11-16.
+	    */
+
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/dav/WebstormProjects/react/2DV607-ria/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "routes.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
@@ -30624,6 +30628,11 @@
 	                                _reactRouter.Link,
 	                                { to: '/portfolio' },
 	                                'Portfolio'
+	                            ),
+	                            _react2.default.createElement(
+	                                _reactRouter.Link,
+	                                { to: '/newcard' },
+	                                'New portfolio Card'
 	                            )
 	                        )
 	                    ),
@@ -34083,6 +34092,11 @@
 	    card: {
 	        width: 320,
 	        height: 320,
+	        margin: 'auto'
+	    },
+	    bigCard: {
+	        width: 400,
+	        height: 640,
 	        margin: 'auto'
 	    },
 	    cardTitle: {
@@ -43327,10 +43341,6 @@
 	
 	var _portfolioCard = __webpack_require__(481);
 	
-	var _submitPortfolioCard = __webpack_require__(482);
-	
-	var _submitPortfolioCard2 = _interopRequireDefault(_submitPortfolioCard);
-	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -43357,17 +43367,17 @@
 	                _react2.default.createElement(
 	                    _reactMdl.Cell,
 	                    { style: { align: "stretch" }, col: 3 },
-	                    _react2.default.createElement(_submitPortfolioCard2.default, null)
+	                    _react2.default.createElement(_portfolioCard.PortfolioCard, null)
 	                ),
 	                _react2.default.createElement(
 	                    _reactMdl.Cell,
 	                    { style: { align: "stretch" }, col: 3 },
-	                    _react2.default.createElement(_submitPortfolioCard2.default, null)
+	                    _react2.default.createElement(_portfolioCard.PortfolioCard, null)
 	                ),
 	                _react2.default.createElement(
 	                    _reactMdl.Cell,
 	                    { style: { align: "stretch" }, col: 3 },
-	                    _react2.default.createElement(_submitPortfolioCard2.default, null)
+	                    _react2.default.createElement(_portfolioCard.PortfolioCard, null)
 	                )
 	            );
 	        }
@@ -43491,6 +43501,16 @@
 	                            _react2.default.createElement(
 	                                'span',
 	                                { style: styles.cardRowTitle },
+	                                'techniques: '
+	                            ),
+	                            '[Javascript,React,Redux,Firebase]'
+	                        ),
+	                        _react2.default.createElement(
+	                            'div',
+	                            { style: styles.cardRow },
+	                            _react2.default.createElement(
+	                                'span',
+	                                { style: styles.cardRowTitle },
 	                                'employer: '
 	                            ),
 	                            ' name: LNU, url: lnu.se, contact: david.waller@hismail.com'
@@ -43524,8 +43544,6 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _reactMdl = __webpack_require__(418);
-	
 	var _customStyles = __webpack_require__(466);
 	
 	var _reactRedux = __webpack_require__(398);
@@ -43533,6 +43551,8 @@
 	var _submitActions = __webpack_require__(483);
 	
 	var _submitActions2 = _interopRequireDefault(_submitActions);
+	
+	var _reactMdl = __webpack_require__(418);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -43545,98 +43565,108 @@
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
 	
 	var styles = Object.freeze({
-	    wrapper: {
-	        width: '80%',
-	        margin: 'auto'
-	    },
+	    card: _customStyles.cardStyles.bigCard,
 	    cardTitle: Object.assign({
-	        height: 176,
 	        color: '#fff'
 	    }, _customStyles.cardStyles.cardTitle),
-	    cardRow: _customStyles.cardStyles.cardRow,
-	    cardRowTitle: _customStyles.cardStyles.cardRowTitle
+	    textField: {
+	        width: 400
+	    }
 	});
 	
-	var SubmitPortfolioCard = (function (_Component) {
-	    _inherits(SubmitPortfolioCard, _Component);
+	var NewPortfolioCard = (function (_Component) {
+	    _inherits(NewPortfolioCard, _Component);
 	
-	    function SubmitPortfolioCard() {
-	        _classCallCheck(this, SubmitPortfolioCard);
+	    function NewPortfolioCard() {
+	        _classCallCheck(this, NewPortfolioCard);
 	
-	        return _possibleConstructorReturn(this, Object.getPrototypeOf(SubmitPortfolioCard).apply(this, arguments));
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(NewPortfolioCard).apply(this, arguments));
 	    }
 	
-	    _createClass(SubmitPortfolioCard, [{
+	    _createClass(NewPortfolioCard, [{
+	        key: 'submit',
+	        value: function submit() {
+	            var portfolioCard = {
+	                projectTitle: this.refs.projectTitle.refs.input.value,
+	                text: this.refs.text.refs.input.value,
+	                techniques: this.refs.techniques.refs.input.value,
+	                employer: this.refs.employer.refs.input.value,
+	                employerContact: this.refs.employerContact.refs.input.value,
+	                employerUrl: this.refs.employerUrl.refs.input.value
+	            };
+	            this.props.submit(portfolioCard);
+	        }
+	    }, {
 	        key: 'render',
 	        value: function render() {
+	            var _this2 = this;
+	
 	            return _react2.default.createElement(
 	                'div',
 	                { style: styles.wrapper },
 	                _react2.default.createElement(
 	                    _reactMdl.Card,
-	                    null,
+	                    { shadow: 0, style: styles.card },
 	                    _react2.default.createElement(
 	                        _reactMdl.CardTitle,
 	                        { style: styles.cardTitle },
-	                        this.props.portfolioCard.imageUrl
+	                        'New PortfolioCard'
 	                    ),
 	                    _react2.default.createElement(
 	                        _reactMdl.CardText,
 	                        null,
 	                        _react2.default.createElement(
-	                            'div',
-	                            { style: styles.cardRowTitle },
-	                            this.props.portfolioCard.projectTitle
-	                        ),
-	                        _react2.default.createElement(
-	                            'div',
-	                            { style: styles.cardRow },
+	                            'form',
+	                            { onSubmit: function onSubmit(e) {
+	                                    e.preventDefault();
+	                                    _this2.props.submit(_this2.refs);
+	                                } },
+	                            _react2.default.createElement(_reactMdl.Textfield, {
+	                                onChange: function onChange() {},
+	                                label: this.props.portfolioCard.projectTitle,
+	                                style: styles.textField,
+	                                ref: 'projectTitle'
+	                            }),
+	                            _react2.default.createElement(_reactMdl.Textfield, {
+	                                onChange: function onChange() {},
+	                                label: this.props.portfolioCard.text,
+	                                style: styles.textField,
+	                                ref: 'text'
+	                            }),
+	                            _react2.default.createElement(_reactMdl.Textfield, {
+	                                onChange: function onChange() {},
+	                                label: this.props.portfolioCard.techniques,
+	                                style: styles.textField,
+	                                ref: 'techniques'
+	                            }),
+	                            _react2.default.createElement(_reactMdl.Textfield, {
+	                                onChange: function onChange() {},
+	                                label: this.props.portfolioCard.employer,
+	                                style: styles.textField,
+	                                ref: 'employer'
+	                            }),
+	                            _react2.default.createElement(_reactMdl.Textfield, {
+	                                onChange: function onChange() {},
+	                                label: this.props.portfolioCard.employerContact,
+	                                style: styles.textField,
+	                                ref: 'employerContact'
+	                            }),
+	                            _react2.default.createElement(_reactMdl.Textfield, {
+	                                onChange: function onChange() {},
+	                                label: this.props.portfolioCard.employerUrl,
+	                                style: styles.textField,
+	                                ref: 'employerUrl'
+	                            }),
 	                            _react2.default.createElement(
-	                                'span',
-	                                { style: styles.cardRowTitle },
-	                                'Description: '
+	                                _reactMdl.Button,
+	                                null,
+	                                'Todo implement image Load'
 	                            ),
-	                            this.props.portfolioCard.text
-	                        ),
-	                        _react2.default.createElement(
-	                            'div',
-	                            { style: styles.cardRow },
 	                            _react2.default.createElement(
-	                                'span',
-	                                { style: styles.cardRowTitle },
-	                                'Techniques used: '
-	                            ),
-	                            this.props.portfolioCard.techniques
-	                        ),
-	                        _react2.default.createElement(
-	                            'div',
-	                            { style: styles.cardRow },
-	                            _react2.default.createElement(
-	                                'span',
-	                                { style: styles.cardRowTitle },
-	                                'Employer: '
-	                            ),
-	                            this.props.portfolioCard.employer
-	                        ),
-	                        _react2.default.createElement(
-	                            'div',
-	                            { style: styles.cardRow },
-	                            _react2.default.createElement(
-	                                'span',
-	                                { style: styles.cardRowTitle },
-	                                'Employer contact: '
-	                            ),
-	                            this.props.portfolioCard.employerContact
-	                        ),
-	                        _react2.default.createElement(
-	                            'div',
-	                            { style: styles.cardRow },
-	                            _react2.default.createElement(
-	                                'span',
-	                                { style: styles.cardRowTitle },
-	                                'Link to employer: '
-	                            ),
-	                            this.props.portfolioCard.employerUrl
+	                                _reactMdl.Button,
+	                                { type: 'submit' },
+	                                'Post Card'
+	                            )
 	                        )
 	                    )
 	                )
@@ -43644,10 +43674,10 @@
 	        }
 	    }]);
 	
-	    return SubmitPortfolioCard;
+	    return NewPortfolioCard;
 	})(_react.Component);
 	
-	SubmitPortfolioCard.propTypes = {
+	NewPortfolioCard.propTypes = {
 	    submit: _react.PropTypes.func.isRequired
 	};
 	
@@ -43661,14 +43691,16 @@
 	var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 	    return {
 	        submit: function submit(portfolioCard) {
+	            console.log(this.refs);
+	            console.log(portfolioCard);
 	            dispatch(_submitActions2.default.submit(portfolioCard));
 	        }
 	    };
 	};
 	
-	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(SubmitPortfolioCard);
+	exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(NewPortfolioCard);
 	
-	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/dav/WebstormProjects/react/2DV607-ria/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "submitPortfolioCard.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/dav/WebstormProjects/react/2DV607-ria/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "newPortofolioCard.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
 /* 483 */
@@ -43699,10 +43731,11 @@
 	                        switch (_context.prev = _context.next) {
 	                            case 0:
 	                                dispatch({ type: 'START_SPINNER' });
-	                                _context.next = 3;
-	                                return auth(portfolioCard);
+	                                console.log("In submitActions not implemented");
+	                                _context.next = 4;
+	                                return notImplementedFunction(portfolioCard);
 	
-	                            case 3:
+	                            case 4:
 	                                submit = _context.sent;
 	
 	                                if (submit.isSuccessful) {
@@ -43711,7 +43744,7 @@
 	                                    console.log("Something went wrong.");
 	                                }
 	
-	                            case 5:
+	                            case 6:
 	                            case 'end':
 	                                return _context.stop();
 	                        }
