@@ -22,18 +22,6 @@ const styles = Object.freeze({
 
 class NewPortfolioCard extends Component {
 
-    submit() {
-        const portfolioCard = {
-            projectTitle: this.refs.projectTitle.refs.input.value,
-            text: this.refs.text.refs.input.value,
-            techniques: this.refs.techniques.refs.input.value,
-            employer: this.refs.employer.refs.input.value,
-            employerContact: this.refs.employerContact.refs.input.value,
-            employerUrl: this.refs.employerUrl.refs.input.value
-        };
-        this.props.submit(portfolioCard);
-    }
-
     render() {
         return (
             <div style={styles.wrapper}>
@@ -115,9 +103,15 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        submit(portfolioCard) {
-            console.log(this.refs);
-            console.log(portfolioCard);
+        submit(submitAction) {
+            const portfolioCard = {
+                projectTitle: submitAction.projectTitle.refs.input.value,
+                text: submitAction.text.refs.input.value,
+                techniques: submitAction.techniques.refs.input.value,
+                employer: submitAction.employer.refs.input.value,
+                employerContact: submitAction.employerContact.refs.input.value,
+                employerUrl: submitAction.employerUrl.refs.input.value
+            };
             dispatch(submitActions.submit(portfolioCard))
         }
     }
