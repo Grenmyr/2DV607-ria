@@ -70,7 +70,7 @@ class NewPortfolioCard extends Component {
                                     style={styles.textField}
                                     ref="employerUrl"
                                 />
-                                <Button>Todo implement image Load</Button>
+                                <input id="inputFileToLoad" type="file" ref="image"/>
                                 <Button type="submit">Post Card</Button>
 
                             </form>
@@ -90,9 +90,11 @@ class NewPortfolioCard extends Component {
     }
 }
 
+
 NewPortfolioCard.propTypes = {
     submit: PropTypes.func.isRequired
 };
+
 
 const mapStateToProps = (state) => {
     return {
@@ -104,13 +106,15 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         submit(submitAction) {
+            console.log(submitAction);
             const portfolioCard = {
                 projectTitle: submitAction.projectTitle.refs.input.value,
                 text: submitAction.text.refs.input.value,
                 techniques: submitAction.techniques.refs.input.value,
                 employer: submitAction.employer.refs.input.value,
                 employerContact: submitAction.employerContact.refs.input.value,
-                employerUrl: submitAction.employerUrl.refs.input.value
+                employerUrl: submitAction.employerUrl.refs.input.value,
+                image: submitAction.image.files[0]
             };
             dispatch(submitActions.submit(portfolioCard))
         }
