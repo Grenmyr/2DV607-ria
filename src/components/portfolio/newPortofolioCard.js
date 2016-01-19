@@ -1,12 +1,10 @@
-/**
- * Created by dav on 2016-01-13.
- */
 import React, { Component, PropTypes } from 'react';
 import { cardStyles } from '../../css/customStyles';
 import { connect } from 'react-redux';
 import submitActions from '../../actions/submitActions'
 import {Textfield,Button,Card,CardTitle,CardText,CardActions} from 'react-mdl';
 import { Link }  from 'react-router';
+import {immediateDebounce} from '../../utils/debouncer';
 
 const styles = Object.freeze({
     bigCard: cardStyles.bigCard,
@@ -22,6 +20,14 @@ const styles = Object.freeze({
 
 class NewPortfolioCard extends Component {
 
+
+    constructor(props) {
+        super(props);
+        this.sumbitWithImmediateDebounce = immediateDebounce(1000, (refs) => {
+            this.props.submit(refs);
+        });
+    }
+
     render() {
         return (
             <div style={styles.wrapper}>
@@ -32,7 +38,7 @@ class NewPortfolioCard extends Component {
                         <CardText>
                             <form onSubmit={(e) => {
                             e.preventDefault();
-                            this.props.submit(this.refs)
+                            this.sumbitWithImmediateDebounce(this.refs);
                           }}>
                                 <Textfield
                                     onChange={() => {}}
