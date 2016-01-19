@@ -2,7 +2,9 @@ import R from 'ramda';
 
 const debounce = R.curry((immediate, wait, callback) => {
     let timeout; // remembered by the returned function via the closure.
+    console.log('test');
     return (refs) => {
+        console.log('running callback');
         // later is passed as a callback to the setTimeout.
         const later = () => {
             timeout = null;

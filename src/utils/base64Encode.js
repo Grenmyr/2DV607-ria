@@ -1,12 +1,12 @@
 export default (file) => {
-    if(file){
-        const fileReader = new FileReader();
-
-        return new Promise((resolve) => {
-            fileReader.onload = event => resolve(event.target.result);
+        return new Promise((resolve,reject) => {
+            if(!file) {
+                reject("No image provided.");
+            }
+            const fileReader = new FileReader();
+            fileReader.onload = event => {
+                resolve(event.target.result);
+            };
             fileReader.readAsDataURL(file);
         });
-
-    }
-    return null;
 }
