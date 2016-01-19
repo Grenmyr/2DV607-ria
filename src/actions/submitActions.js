@@ -6,7 +6,9 @@ export default {
     submit(portfolioCard) {
         return async (dispatch) => {
             dispatch({type: 'START_SPINNER'});
-            base64Encode(portfolioCard.image);
+            const promise = base64Encode(portfolioCard.image);
+            promise.then((result) => console.log(result));
+
             let submit = await notImplementedFunction(portfolioCard);
             if (submit.isSuccessful) {
                 dispatch({type: 'SUBMIT_PORTFOLIO_CARD'});
