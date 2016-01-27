@@ -6,7 +6,7 @@ export const cardStyles = Object.freeze({
     },
     bigCard: {
         width: 400,
-        height: 640,
+        height: 580,
         margin: 'auto'
     },
     smallCard: {

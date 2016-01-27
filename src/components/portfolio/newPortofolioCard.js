@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { cardStyles } from '../../css/customStyles';
 import { connect } from 'react-redux';
 import submitActions from '../../actions/submitActions'
-import {Textfield,Button,Card,CardTitle,CardText,CardActions} from 'react-mdl';
+import {Textfield,Button,Card,CardTitle,CardText,CardActions, FABButton} from 'react-mdl';
 import { Link }  from 'react-router';
 import {immediateDebounce} from '../../utils/debouncer';
 
@@ -78,9 +78,7 @@ class NewPortfolioCard extends Component {
                                 />
                                 <input id="inputFileToLoad" type="file" ref="image"/>
                                 <Button type="submit">Post Card</Button>
-
                             </form>
-
                         </CardText>
                     </Card>
                 ) : (
