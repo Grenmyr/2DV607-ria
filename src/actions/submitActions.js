@@ -3,23 +3,23 @@
  */
 import base64Encode from './../utils/base64Encode';
 import Firebase from 'firebase';
+import { FireBaseRepository } from '../utils/firebaseRepository';
 
-const submitToFirebase = (portfolioCard) => {
-    let fireBaseRef = new Firebase('portfoliodavidg.firebaseIO.com/' + 'portfolio/');
-    fireBaseRef.push(portfolioCard);
-};
+
 
 export default {
     submit(portfolioCard) {
-        return async (dispatch) => {
+        return (dispatch) => {
             dispatch({type: 'START_SPINNER'});
             base64Encode(portfolioCard.image)
                 .then((result) => {
                     portfolioCard.image = result;
-                    submitToFirebase(portfolioCard)
+                    FireBaseRepository.submitPortfolio(portfolioCard);
+                    dispatch({type: 'SUBMIT_PORTFOLIO_CARD'});
+                    dispatch({type: 'STOP_SPINNER'});
                 })
                 .catch((err) => {
-                   console.log('error', err);
+                    console.log('error', err);
                 });
         }
     }

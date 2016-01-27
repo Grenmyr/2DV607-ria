@@ -19,6 +19,7 @@ export default () => {
             employer: "Employer name unknown.",
             employerUrl: "Url to employer is unknown.",
             employerContact: "Contact was not submitted."
-        }
+        },
+        portfolioCards : []
     }
 };

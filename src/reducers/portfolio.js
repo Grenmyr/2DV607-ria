@@ -4,7 +4,9 @@ const portfolio = (state, action) => {
     const newState = Object.assign({}, state);
     switch(action.type){
         case 'SUBMIT_PORTFOLIO_CARD':
-            // not implemented
+            console.log("Card was submitted");
+            //TODO get latest post from firebase and add to array of cards?
+            console.log(newState);
             newState.portfolioCard = "Not Implemented";
             return newState;
         case 'POPULATE_PORTFOLIO_CARDS':
@@ -12,7 +14,7 @@ const portfolio = (state, action) => {
             newState.portfolioCards = "Not Implemented";
             return newState;
         default:
-            return state || initialState().portfolioCard;
+            return state || initialState().portfolioCards.push("value");
     }
 };
 

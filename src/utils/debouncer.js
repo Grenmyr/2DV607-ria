@@ -11,7 +11,6 @@ const debounce = R.curry((immediate, wait, callback) => {
             if (!immediate) {
                 callback(refs);
             }
-            ;
         };
 
         // Alt 1 (immediate: true): If clicked once timeout is FALSE and immediate is TRUE (constant), hence callImmediately is TRUE.
@@ -40,7 +39,6 @@ const debounce = R.curry((immediate, wait, callback) => {
         if (callImmediately) {
             callback(refs);
         }
-        ;
     };
 });
 

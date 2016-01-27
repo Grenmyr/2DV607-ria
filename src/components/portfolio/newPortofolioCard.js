@@ -113,23 +113,13 @@ const mapDispatchToProps = (dispatch) => {
     return {
         submit(submitAction) {
 
-            Object
+            const portfolioCard = Object
                 .keys(submitAction)
                 .reduce((acc, key) => {
                     acc[key] = submitAction[key].hasOwnProperty('refs') ? submitAction[key].refs.input.value:
                         acc[key] = submitAction[key].files[0];
                     return acc;
                 }, {});
-
-            const portfolioCard = {
-                projectTitle: submitAction.projectTitle.refs.input.value,
-                text: submitAction.text.refs.input.value,
-                techniques: submitAction.techniques.refs.input.value,
-                employer: submitAction.employer.refs.input.value,
-                employerContact: submitAction.employerContact.refs.input.value,
-                employerUrl: submitAction.employerUrl.refs.input.value,
-                image: submitAction.image.files[0]
-            };
             dispatch(submitActions.submit(portfolioCard))
         }
     }

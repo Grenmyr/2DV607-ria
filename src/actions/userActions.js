@@ -1,26 +1,14 @@
-import Firebase from 'firebase';
-const fireBaseRef = new Firebase('portfoliodavidg.firebaseIO.com');
 import history from './../utils/history'
-
+import { FireBaseRepository, FireBaseRef } from '../utils/firebaseRepository'
 
 const auth = (user) => {
-    return new Promise((resolve, reject) => {
-        fireBaseRef.authWithPassword({
-            email: user.email,
-            password: user.password
-        }, (error, data) => {
-            if (error) {
-                resolve({data: error, isSuccessful: false});
-            }
-            resolve({data, isSuccessful: true});
-        });
-    });
+    return FireBaseRepository.auth(user);
 };
 
 export default {
     listenToAuthState() {
         return (dispatch) => {
-            fireBaseRef.onAuth((authData) => {
+            FireBaseRef.onAuth((authData) => {
                 if (authData) {
                     console.log('listen action says logged in.');
                     dispatch({type: 'SET_LOGIN_USER', email: authData.password.email});
@@ -56,7 +44,7 @@ export default {
     logoutUser() {
         return async (dispatch) => {
             dispatch({type: 'LOGOUT'});
-            fireBaseRef.unauth();
+            FireBaseRef.unauth();
         }
     }
 }
