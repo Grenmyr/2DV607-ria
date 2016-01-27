@@ -15,7 +15,7 @@ export default {
                 .then((result) => {
                     portfolioCard.image = result;
                     FireBaseRepository.submitPortfolio(portfolioCard);
-                    dispatch({type: 'SUBMIT_PORTFOLIO_CARD'});
+                    dispatch({type: 'SUBMIT_TO_PORTFOLIO_CARDS'});
                     dispatch({type: 'STOP_SPINNER'});
                 })
                 .catch((err) => {
