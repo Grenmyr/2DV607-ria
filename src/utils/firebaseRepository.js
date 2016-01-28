@@ -1,6 +1,5 @@
 import Firebase from 'firebase';
 export class FireBaseRepository{
-
     // Static methods are called without instantiating their class.
     static auth (user){
         return new Promise((resolve, reject) => {
@@ -14,6 +13,19 @@ export class FireBaseRepository{
                 resolve({data, isSuccessful: true});
             });
         });
+    }
+
+    static getPortfolio () {
+        return new Promise((resolve,reject) => {
+            const fireBaseRef = new Firebase('portfoliodavidg.firebaseIO.com/' + 'portfolio/');
+            fireBaseRef.on("value", function(data) {
+                let object = data.val();
+                resolve(Object.keys(object).map(function(k) { return object[k] }));
+            }, function (errorObject) {
+                reject("The read failed: " + errorObject.code);
+            });
+        });
+
     }
 
     static submitPortfolio (portfolioCard) {

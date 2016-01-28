@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { Card, CardText, CardTitle } from 'react-mdl';
 import { cardStyles } from '../../css/customStyles';
+import { connect } from 'react-redux';
 
 const styles = Object.freeze({
     wrapper: {
@@ -15,8 +16,12 @@ const styles = Object.freeze({
     cardRowTitle: cardStyles.cardRowTitle
 });
 
+
+
 export class PortfolioCard extends Component {
+
     render(){
+        console.log(this.props.portfolioCards);
         return (
             <div style={styles.wrapper}>
                 <Card>
@@ -46,3 +51,15 @@ export class PortfolioCard extends Component {
         )
     }
 }
+
+PortfolioCard.propTypes = {
+    portfolioCards: PropTypes.func.isRequired
+};
+
+const mapStateToProps = (state) => {
+    return {
+        portfolioCards: state.portfolioCards
+    }
+};
+
+export default connect(mapStateToProps)(PortfolioCard)
