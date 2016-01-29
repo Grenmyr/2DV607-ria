@@ -19,8 +19,6 @@ const styles = Object.freeze({
 
 
 class NewPortfolioCard extends Component {
-
-
     constructor(props) {
         super(props);
         this.sumbitWithImmediateDebounce = immediateDebounce(1000, (refs) => {

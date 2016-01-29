@@ -8,7 +8,7 @@ import Home from './components/home';
 import Auth from './components/auth/auth';
 import {About} from './components/about';
 import {Contact} from './components/contact';
-import {PortfolioGrid} from './components/portfolio/portfolioGrid';
+import PortfolioGrid from './components/portfolio/portfolioGrid';
 import newPortfolioCard from './components/portfolio/newPortofolioCard';
 
 export default (

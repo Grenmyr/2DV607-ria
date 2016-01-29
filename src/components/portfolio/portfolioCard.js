@@ -21,7 +21,6 @@ const styles = Object.freeze({
 export class PortfolioCard extends Component {
 
     render(){
-        console.log(this.props.portfolioCards);
         return (
             <div style={styles.wrapper}>
                 <Card>
@@ -51,15 +50,3 @@ export class PortfolioCard extends Component {
         )
     }
 }
-
-PortfolioCard.propTypes = {
-    portfolioCards: PropTypes.func.isRequired
-};
-
-const mapStateToProps = (state) => {
-    return {
-        portfolioCards: state.portfolioCards
-    }
-};
-
-export default connect(mapStateToProps)(PortfolioCard)

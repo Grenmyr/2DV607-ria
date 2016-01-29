@@ -7,6 +7,7 @@ import { Provider } from 'react-redux';
 import React from 'react';
 import routes from './routes';
 import store from './store';
+import portfolioActions from './actions/portfolioActions';
 import userActions from './actions/userActions';
 import 'babel-polyfill';
 
@@ -18,3 +19,4 @@ ReactDom.render(
 );
 
 store.dispatch(userActions.listenToAuthState());
+store.dispatch(portfolioActions.loadPortfolioCards());
