@@ -14,18 +14,18 @@ const styles = Object.freeze({
 
 class PortfolioGrid extends Component {
     render(){
-        console.log("portfolioGrid",this.props.portfolioCards);
         return (
             <div style={styles.wrapper}>
                 <Grid>
-                    <PortfolioCard/>
+                    {console.log("i render",this.props.portfolioCards)}
+                    <PortfolioCard this/>
                 </Grid>
             </div>
         )
     }
 }
 
-PortfolioCard.propTypes = {
+PortfolioGrid.propTypes = {
     portfolioCards: PropTypes.array.isRequired
 };
 
