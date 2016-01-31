@@ -8,7 +8,6 @@ class SpinnerComponent extends Component {
         return (
             <div>
                 {this.props.spinner.spinning ? (
-
                     <ProgressBar indeterminate style={{ margin: '0 auto'}}/>
                 ) : (
                     null

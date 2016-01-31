@@ -17,8 +17,9 @@ class PortfolioGrid extends Component {
         return (
             <div style={styles.wrapper}>
                 <Grid>
-                    {console.log("i render",this.props.portfolioCards)}
-                    <PortfolioCard this/>
+                    { this.props.portfolioCards.map(function(callback, i){
+                        return <PortfolioCard key={i} card={callback}/>
+                })}
                 </Grid>
             </div>
         )

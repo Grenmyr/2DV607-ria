@@ -20,6 +20,9 @@ export class FireBaseRepository{
             const fireBaseRef = new Firebase('portfoliodavidg.firebaseIO.com/' + 'portfolio/');
             fireBaseRef.on("value", function(data) {
                 let object = data.val();
+                if(!object){
+                    return reject("The read failed, there is no data to present");
+                }
                 resolve(Object.keys(object).map(function(k) { return object[k] }));
             }, function (errorObject) {
                 reject("The read failed: " + errorObject.code);

@@ -19,6 +19,7 @@ export default {
                     dispatch({type: 'STOP_SPINNER'});
                 })
                 .catch((err) => {
+                    dispatch({type: 'STOP_SPINNER'});
                     console.log('error', err);
                 });
         }

@@ -31,7 +31,6 @@ class NewPortfolioCard extends Component {
             <div style={styles.wrapper}>
                 {this.props.loginState.isLoggedIn ? (
                     <Card shadow={0} style={styles.bigCard}>
-
                         <CardTitle style={styles.cardTitle}>New PortfolioCard</CardTitle>
                         <CardText>
                             <form onSubmit={(e) => {
