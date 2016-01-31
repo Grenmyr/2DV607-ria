@@ -1,3 +1,5 @@
+import React from 'react'
+// why do i need this import of React ?
 import { Card, CardText, CardTitle } from 'react-mdl';
 import { cardStyles } from '../../css/customStyles';
 import { connect } from 'react-redux';

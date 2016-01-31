@@ -1,4 +1,4 @@
-import React, {Component, PropTypes} from 'react';
+import React, { Component, PropTypes} from 'react';
 import {Grid} from 'react-mdl';
 import {PortfolioCard} from './portfolioCard';
 import { connect } from 'react-redux';
@@ -13,6 +13,7 @@ const styles = Object.freeze({
 });
 
 class PortfolioGrid extends Component {
+
     render(){
         return (
             <div style={styles.wrapper}>
