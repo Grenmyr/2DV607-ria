@@ -1,6 +1,10 @@
 export const cardStyles = Object.freeze({
     card: {
         width: 320,
+        height: 320
+    },
+    singleCard:{
+        width: 320,
         height: 320,
         margin: 'auto'
     },

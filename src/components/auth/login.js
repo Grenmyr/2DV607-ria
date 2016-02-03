@@ -11,7 +11,7 @@ import { cardStyles } from '../../css/customStyles';
 import Spinner from '../spinner';
 
 const styles = Object.freeze({
-    card: cardStyles.card,
+    card: cardStyles.singleCard,
     cardTitle: Object.assign({
         color: '#fff'
     }, cardStyles.cardTitle),

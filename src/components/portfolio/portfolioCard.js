@@ -6,8 +6,7 @@ import { connect } from 'react-redux';
 
 const styles = Object.assign({
     wrapper: {
-        width: '80%',
-        margin: 'auto'
+        padding: '15px'
     },
     cardRow: cardStyles.cardRow,
     cardRowTitle: cardStyles.cardRowTitle

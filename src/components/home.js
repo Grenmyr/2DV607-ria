@@ -3,7 +3,7 @@ import { Card, CardTitle, CardText, CardActions, Button } from 'react-mdl';
 import { cardStyles } from '../css/customStyles';
 
 const styles = Object.freeze({
-    card: cardStyles.card,
+    card: cardStyles.singleCard,
     cardTitle: Object.assign({
         color: '#fff',
     }, cardStyles.cardTitle)

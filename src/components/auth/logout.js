@@ -4,7 +4,7 @@ import { Link }  from 'react-router';
 import { cardStyles } from '../../css/customStyles';
 
 const styles = Object.freeze({
-    card: cardStyles.card,
+    card: cardStyles.singleCard,
     button: {
         float: 'left'
     }

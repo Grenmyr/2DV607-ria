@@ -7,8 +7,7 @@ const styles = Object.freeze({
     wrapper: {
         display: 'flex',
         flexDirection: 'row',
-        alignItems: 'center',
-        margin: '0 auto'
+        alignItems: 'baseline'
     }
 });
 
