@@ -8,6 +8,11 @@ export const cardStyles = Object.freeze({
         height: 320,
         margin: 'auto'
     },
+    homeViewCard:{
+        width: 420,
+        height: 420,
+        margin: 'auto'
+    },
     bigCard: {
         width: 400,
         height: 580,
@@ -34,5 +39,10 @@ export const cardStyles = Object.freeze({
     cardRowTitle: {
         fontWeight:600,
         fontSize:'105%'
+    },
+    colors:{
+        accentColor :'#536DFE',
+        textColor: 'rgba(0,0,0, 0.54)',
+        primaryColor: '#FFF'
     }
 });

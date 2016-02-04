@@ -5,7 +5,7 @@ import { Layout, Header, Navigation, Drawer, Content, Button, Card } from 'react
 
 const styles = Object.freeze({
     wrapper: {
-        background: 'url(http://www.getmdl.io/assets/demos/transparent.jpg) center / cover'
+        background: 'url(src/files/bro.jpg) center / cover'
     },
     header: {
         color: 'white'
