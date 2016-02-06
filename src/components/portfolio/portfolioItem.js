@@ -1,0 +1,1 @@
+export const PortfolioItem =11;

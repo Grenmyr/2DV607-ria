@@ -3,6 +3,7 @@ import React from 'react'
 import { Card, CardText, CardTitle } from 'react-mdl';
 import { cardStyles } from '../../css/customStyles';
 import { connect } from 'react-redux';
+import { PortfolioItem } from './portfolioItem';
 
 const styles = Object.assign({
     wrapper: {
@@ -15,7 +16,7 @@ const styles = Object.assign({
 
 
 export const PortfolioCard = ({card}) => (
-            <div style={styles.wrapper}>
+            <div style={styles.wrapper} onClick={()=> console.log("click")}>
                 <Card>
                     <CardTitle style={{color:'#fff',height:'176',background : "url("+card.image+")"}}>{card.projectTitle}</CardTitle>
                     <CardText>

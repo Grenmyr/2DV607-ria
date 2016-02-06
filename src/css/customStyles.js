@@ -44,5 +44,10 @@ export const cardStyles = Object.freeze({
         accentColor :'#536DFE',
         textColor: 'rgba(0,0,0, 0.54)',
         primaryColor: '#FFF'
+    },
+    cardText:{
+        fontWeight:700,
+        fontSize:'105%',
+        textColor: '#536DFE'
     }
 });
