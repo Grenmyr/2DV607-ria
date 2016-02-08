@@ -49,5 +49,22 @@ export const cardStyles = Object.freeze({
         fontWeight:700,
         fontSize:'105%',
         textColor: '#536DFE'
+    },
+    standardSingleCard: {
+            cardActions: {height: '120px', background: '#536DFE'},
+            card: {
+                width: 420,
+                height: 420,
+                margin: 'auto'
+            },
+            cardTitle: Object.assign({
+                color: '#fff'
+            }),
+            span: {color: '#FFF', fontSize: '24px', fontWeight: '500'},
+            cardText : {
+                fontWeight:700,
+                fontSize:'105%',
+                textColor: '#536DFE'
+            }
     }
 });

@@ -12,7 +12,7 @@ export default () => {
             spinning: false
         },
         portfolioCard: {
-            projectTitle: "No title submitted.",
+            projectTitle: "No span submitted.",
             imageUrl: "No Image available.",
             text: "No text describing project was submitted",
             techniques: "Techniques used is not specified.",

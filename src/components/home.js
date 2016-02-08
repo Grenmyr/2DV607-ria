@@ -9,7 +9,7 @@ const styles = Object.freeze({
     cardTitle: Object.assign({
         color: '#fff'
     }),
-    title: {color: cardStyles.colors.primaryColor, fontSize: '24px', fontWeight: '500'},
+    span: {color: cardStyles.colors.primaryColor, fontSize: '24px', fontWeight: '500'},
     cardText : cardStyles.cardText
 });
 
@@ -17,7 +17,7 @@ const Home = () => (
     <Card shadow={0} style={styles.card}>
         <CardActions style={styles.cardActions}>
             <CardTitle style={styles.cardTitle}>
-                 <span style={styles.title}>
+                 <span style={styles.span}>
                     Välkommen till min portfolio!
                  </span>
             </CardTitle>

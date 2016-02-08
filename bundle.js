@@ -5283,7 +5283,7 @@
 	Item.prototype.run = function () {
 	    this.fun.apply(null, this.array);
 	};
-	process.title = 'browser';
+	process.span = 'browser';
 	process.browser = true;
 	process.env = {};
 	process.argv = [];
@@ -13282,15 +13282,15 @@
 	  // first, causing a confusing mess.
 	
 	  // https://html.spec.whatwg.org/multipage/syntax.html#special
-	  var specialTags = ['address', 'applet', 'area', 'article', 'aside', 'base', 'basefont', 'bgsound', 'blockquote', 'body', 'br', 'button', 'caption', 'center', 'col', 'colgroup', 'dd', 'details', 'dir', 'div', 'dl', 'dt', 'embed', 'fieldset', 'figcaption', 'figure', 'footer', 'form', 'frame', 'frameset', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'head', 'header', 'hgroup', 'hr', 'html', 'iframe', 'img', 'input', 'isindex', 'li', 'link', 'listing', 'main', 'marquee', 'menu', 'menuitem', 'meta', 'nav', 'noembed', 'noframes', 'noscript', 'object', 'ol', 'p', 'param', 'plaintext', 'pre', 'script', 'section', 'select', 'source', 'style', 'summary', 'table', 'tbody', 'td', 'template', 'textarea', 'tfoot', 'th', 'thead', 'title', 'tr', 'track', 'ul', 'wbr', 'xmp'];
+	  var specialTags = ['address', 'applet', 'area', 'article', 'aside', 'base', 'basefont', 'bgsound', 'blockquote', 'body', 'br', 'button', 'caption', 'center', 'col', 'colgroup', 'dd', 'details', 'dir', 'div', 'dl', 'dt', 'embed', 'fieldset', 'figcaption', 'figure', 'footer', 'form', 'frame', 'frameset', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'head', 'header', 'hgroup', 'hr', 'html', 'iframe', 'img', 'input', 'isindex', 'li', 'link', 'listing', 'main', 'marquee', 'menu', 'menuitem', 'meta', 'nav', 'noembed', 'noframes', 'noscript', 'object', 'ol', 'p', 'param', 'plaintext', 'pre', 'script', 'section', 'select', 'source', 'style', 'summary', 'table', 'tbody', 'td', 'template', 'textarea', 'tfoot', 'th', 'thead', 'span', 'tr', 'track', 'ul', 'wbr', 'xmp'];
 	
 	  // https://html.spec.whatwg.org/multipage/syntax.html#has-an-element-in-scope
 	  var inScopeTags = ['applet', 'caption', 'html', 'table', 'td', 'th', 'marquee', 'object', 'template',
 	
 	  // https://html.spec.whatwg.org/multipage/syntax.html#html-integration-point
-	  // TODO: Distinguish by namespace here -- for <title>, including it here
+	  // TODO: Distinguish by namespace here -- for <span>, including it here
 	  // errs on the side of fewer warnings
-	  'foreignObject', 'desc', 'title'];
+	  'foreignObject', 'desc', 'span'];
 	
 	  // https://html.spec.whatwg.org/multipage/syntax.html#has-an-element-in-button-scope
 	  var buttonScopeTags = inScopeTags.concat(['button']);
@@ -13399,7 +13399,7 @@
 	
 	      // https://html.spec.whatwg.org/multipage/syntax.html#parsing-main-inhead
 	      case 'head':
-	        return tag === 'base' || tag === 'basefont' || tag === 'bgsound' || tag === 'link' || tag === 'meta' || tag === 'title' || tag === 'noscript' || tag === 'noframes' || tag === 'style' || tag === 'script' || tag === 'template';
+	        return tag === 'base' || tag === 'basefont' || tag === 'bgsound' || tag === 'link' || tag === 'meta' || tag === 'span' || tag === 'noscript' || tag === 'noframes' || tag === 'style' || tag === 'script' || tag === 'template';
 	
 	      // https://html.spec.whatwg.org/multipage/semantics.html#the-html-element
 	      case 'html':
@@ -15664,7 +15664,7 @@
 	    summary: null,
 	    tabIndex: null,
 	    target: null,
-	    title: null,
+	    span: null,
 	    type: null,
 	    useMap: null,
 	    value: MUST_USE_PROPERTY | HAS_SIDE_EFFECTS,
@@ -16285,7 +16285,7 @@
 	 * valid according to `DOMProperty`.
 	 *
 	 *  - Event listeners: `onClick`, `onMouseDown`, etc.
-	 *  - DOM properties: `className`, `name`, `title`, etc.
+	 *  - DOM properties: `className`, `name`, `span`, etc.
 	 *
 	 * The `style` property functions differently from the DOM API. It accepts an
 	 * object mapping of style properties to values.
@@ -16815,7 +16815,7 @@
 	        /**
 	         * Components like <html> <head> and <body> can't be removed or added
 	         * easily in a cross-browser way, however it's valuable to be able to
-	         * take advantage of React's reconciliation for styling and <title>
+	         * take advantage of React's reconciliation for styling and <span>
 	         * management. So we just document it and throw in dangerous cases.
 	         */
 	         true ? process.env.NODE_ENV !== 'production' ? invariant(false, '<%s> tried to unmount. Because of cross-browser quirks it is ' + 'impossible to unmount some top-level components (eg <html>, ' + '<head>, and <body>) reliably and efficiently. To fix this, have a ' + 'single top-level component that never unmounts render these ' + 'elements.', this._tag) : invariant(false) : undefined;
@@ -23310,7 +23310,7 @@
 	    xlinkHref: 'xlink:href',
 	    xlinkRole: 'xlink:role',
 	    xlinkShow: 'xlink:show',
-	    xlinkTitle: 'xlink:title',
+	    xlinkTitle: 'xlink:span',
 	    xlinkType: 'xlink:type',
 	    xmlBase: 'xml:base',
 	    xmlLang: 'xml:lang',
@@ -24744,7 +24744,7 @@
 	  th: 'th',
 	  thead: 'thead',
 	  time: 'time',
-	  title: 'title',
+	  span: 'span',
 	  tr: 'tr',
 	  track: 'track',
 	  u: 'u',
@@ -31541,7 +31541,7 @@
 	var DropDownSection = function DropDownSection(props) {
 	    var className = props.className;
 	    var size = props.size;
-	    var title = props.title;
+	    var title = props.span;
 	    var children = props.children;
 	
 	    var otherProps = _objectWithoutProperties(props, ['className', 'size', 'title', 'children']);
@@ -31564,7 +31564,7 @@
 	DropDownSection.propTypes = {
 	    className: _react.PropTypes.string,
 	    size: _react.PropTypes.oneOf(['mini', 'mega']),
-	    title: _react.PropTypes.node.isRequired
+	    span: _react.PropTypes.node.isRequired
 	};
 	DropDownSection.defaultProps = {
 	    size: 'mega'
@@ -32031,7 +32031,7 @@
 	
 	var Drawer = function Drawer(props) {
 	    var className = props.className;
-	    var title = props.title;
+	    var title = props.span;
 	    var children = props.children;
 	
 	    var otherProps = _objectWithoutProperties(props, ['className', 'title', 'children']);
@@ -32043,7 +32043,7 @@
 	        _extends({ className: classes }, otherProps),
 	        title ? _react2.default.createElement(
 	            'span',
-	            { className: 'mdl-layout-title' },
+	            { className: 'mdl-layout-span' },
 	            title
 	        ) : null,
 	        children
@@ -32051,7 +32051,7 @@
 	};
 	Drawer.propTypes = {
 	    className: _react.PropTypes.string,
-	    title: _react.PropTypes.node
+	    span: _react.PropTypes.node
 	};
 	
 	exports.default = Drawer;
@@ -32092,7 +32092,7 @@
 	    var className = props.className;
 	    var scroll = props.scroll;
 	    var seamed = props.seamed;
-	    var title = props.title;
+	    var title = props.span;
 	    var transparent = props.transparent;
 	    var waterfall = props.waterfall;
 	    var children = props.children;
@@ -32127,7 +32127,7 @@
 	    className: _react.PropTypes.string,
 	    scroll: _react.PropTypes.bool,
 	    seamed: _react.PropTypes.bool,
-	    title: _react.PropTypes.node,
+	    span: _react.PropTypes.node,
 	    transparent: _react.PropTypes.bool,
 	    waterfall: _react.PropTypes.bool
 	};
@@ -32164,7 +32164,7 @@
 	
 	var HeaderRow = function HeaderRow(props) {
 	    var className = props.className;
-	    var title = props.title;
+	    var title = props.span;
 	    var children = props.children;
 	
 	    var otherProps = _objectWithoutProperties(props, ['className', 'title', 'children']);
@@ -32176,7 +32176,7 @@
 	        _extends({ className: classes }, otherProps),
 	        title && _react2.default.createElement(
 	            'span',
-	            { className: 'mdl-layout-title' },
+	            { className: 'mdl-layout-span' },
 	            title
 	        ),
 	        title && _react2.default.createElement(_Spacer2.default, null),
@@ -32185,7 +32185,7 @@
 	};
 	HeaderRow.propTypes = {
 	    className: _react.PropTypes.string,
-	    title: _react.PropTypes.node
+	    span: _react.PropTypes.node
 	};
 	
 	exports.default = HeaderRow;
@@ -40789,8 +40789,8 @@
 	     *      var double = R.partial(multiply, [2]);
 	     *      double(2); //=> 4
 	     *
-	     *      var greet = (salutation, title, firstName, lastName) =>
-	     *        salutation + ', ' + title + ' ' + firstName + ' ' + lastName + '!';
+	     *      var greet = (salutation, span, firstName, lastName) =>
+	     *        salutation + ', ' + span + ' ' + firstName + ' ' + lastName + '!';
 	     *
 	     *      var sayHello = R.partial(greet, ['Hello']);
 	     *      var sayHelloToMs = R.partial(sayHello, ['Ms.']);
@@ -40814,8 +40814,8 @@
 	     * @see R.partial
 	     * @example
 	     *
-	     *      var greet = (salutation, title, firstName, lastName) =>
-	     *        salutation + ', ' + title + ' ' + firstName + ' ' + lastName + '!';
+	     *      var greet = (salutation, span, firstName, lastName) =>
+	     *        salutation + ', ' + span + ' ' + firstName + ' ' + lastName + '!';
 	     *
 	     *      var greetMsJaneJones = R.partialRight(greet, ['Ms.', 'Jane', 'Jones']);
 	     *
@@ -44029,7 +44029,7 @@
 	            spinning: false
 	        },
 	        portfolioCard: {
-	            projectTitle: "No title submitted.",
+	            projectTitle: "No span submitted.",
 	            imageUrl: "No Image available.",
 	            text: "No text describing project was submitted",
 	            techniques: "Techniques used is not specified.",
