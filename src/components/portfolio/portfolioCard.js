@@ -15,9 +15,9 @@ const styles = Object.assign({
 
 
 
-export const PortfolioCard = ({card}) => (
+export const PortfolioCard = ({card, onClick}) => (
 
-            <div style={styles.wrapper}>
+            <div style={styles.wrapper} onClick={onClick}>
                 <Card>
                     <CardTitle style={{color:'#fff',height:'176',background : "url("+card.image+")"}}>{card.projectTitle}</CardTitle>
                     <CardText>

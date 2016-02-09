@@ -66,5 +66,12 @@ export const cardStyles = Object.freeze({
                 fontSize:'105%',
                 textColor: '#536DFE'
             }
+    },
+    heroCard: {
+        position: 'absolute',
+        top: '25%',
+        left: '25%',
+        zIndex: '100',
+        backgroundColor: 'red'
     }
 });

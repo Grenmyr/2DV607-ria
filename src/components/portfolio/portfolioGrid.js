@@ -13,20 +13,28 @@ const styles = Object.freeze({
 });
 
 class PortfolioGrid extends Component {
-        // TODO for some reason the callback onClick do not work, i want the <PortfolioItem ref={call()} /> to be loaded on click.
+    constructor(props) {
+        super(props);
+        this.state = {};
+    }
     render(){
         return (
-            <div style={styles.wrapper}>
-            <PortfolioItem/>
+            <div>
+                {this.state.cardToShow && <PortfolioItem card={this.state.cardToShow}/>}
+                <div style={styles.wrapper}>
                 <Grid>
-                    {this.props.portfolioCards.map(function(callback, i){
-                        // TODO For some reason the callback on the OnClick does not work.
+                    {this.props.portfolioCards.map((card, i) => {
                             return (
-                              <PortfolioCard key={i} card={callback} onClick={(callback) => <PortfolioItem ref={callback()}/>}  />
+                              <PortfolioCard key={i} card={card} onClick={() => {
+                                this.setState({
+                                    cardToShow: card
+                                })
+                              }}  />
                             )
                         })
                     }
                 </Grid>
+                </div>
             </div>
         )
     }
