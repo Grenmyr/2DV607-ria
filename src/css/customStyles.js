@@ -1,3 +1,6 @@
+const primaryColor = '#FFF';
+const accentColor = '#536DFE';
+
 export const cardStyles = Object.freeze({
     card: {
         width: 320,
@@ -6,11 +9,6 @@ export const cardStyles = Object.freeze({
     singleCard:{
         width: 320,
         height: 320,
-        margin: 'auto'
-    },
-    homeViewCard:{
-        width: 420,
-        height: 420,
         margin: 'auto'
     },
     bigCard: {
@@ -40,38 +38,37 @@ export const cardStyles = Object.freeze({
         fontWeight:600,
         fontSize:'105%'
     },
-    colors:{
-        accentColor :'#536DFE',
-        textColor: 'rgba(0,0,0, 0.54)',
-        primaryColor: '#FFF'
-    },
-    cardText:{
-        fontWeight:700,
-        fontSize:'105%',
-        textColor: '#536DFE'
-    },
-    standardSingleCard: {
-            cardActions: {height: '120px', background: '#536DFE'},
-            card: {
-                width: 420,
-                height: 420,
-                margin: 'auto'
-            },
-            cardTitle: Object.assign({
-                color: '#fff'
-            }),
-            span: {color: '#FFF', fontSize: '24px', fontWeight: '500'},
-            cardText : {
-                fontWeight:700,
-                fontSize:'105%',
-                textColor: '#536DFE'
-            }
-    },
-    heroCard: {
+    portfolioItemPopupWindow: {
         position: 'absolute',
-        top: '25%',
-        left: '25%',
-        zIndex: '100',
-        backgroundColor: 'red'
+        marginLeft:'auto',
+        marginRight:'auto',
+        marginTop: 'auto',
+        left: 0,
+        right: 0,
+        width: '80%',
+        zIndex: 10,
+        minWidth: '340px'
+    },
+    portfolioOverlayWindow:{
+        display: 'block',
+        position: 'absolute',
+        top: '0%',
+        left: '0%',
+        width: '100%',
+        height: '100%',
+        backgroundColor: 'black',
+        zIndex:2,
+        opacity:.80
+    },
+    sharedCardStyle: {
+        titleSpan: {color: primaryColor, fontSize: '24px', fontWeight: '500'},
+        cardActions: {height: '120px', background: accentColor},
+        cardText: {
+            fontWeight: 700,
+            fontSize: '105%',
+            textColor: accentColor
+        },
+        cardTitle: {color: primaryColor},
+        span: {color: primaryColor, fontSize: '24px', fontWeight: '500'},
     }
 });

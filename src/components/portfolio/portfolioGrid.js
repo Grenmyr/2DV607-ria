@@ -3,12 +3,14 @@ import {Grid} from 'react-mdl';
 import {PortfolioCard} from './portfolioCard';
 import { PortfolioItem } from './portfolioItem';
 import { connect } from 'react-redux';
+import { cardStyles } from '../../css/customStyles';
 
 const styles = Object.freeze({
     wrapper: {
         display: 'flex',
         flexDirection: 'row',
-        alignItems: 'baseline'
+        alignItems: 'baseline',
+        opacity: 1
     }
 });
 
@@ -20,8 +22,13 @@ class PortfolioGrid extends Component {
     render(){
         return (
             <div>
-                {this.state.cardToShow && <PortfolioItem card={this.state.cardToShow}/>}
-                <div style={styles.wrapper}>
+                {this.state.cardToShow && <PortfolioItem card={this.state.cardToShow}/> }
+                <div onClick={()=> {
+                    if(this.state.cardToShow){
+                        this.setState( {cardToShow: undefined})
+                    }
+                }}>
+                    <div style={styles.wrapper}>
                 <Grid>
                     {this.props.portfolioCards.map((card, i) => {
                             return (
@@ -34,6 +41,7 @@ class PortfolioGrid extends Component {
                         })
                     }
                 </Grid>
+                </div>
                 </div>
             </div>
         )
