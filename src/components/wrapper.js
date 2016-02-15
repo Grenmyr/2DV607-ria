@@ -44,7 +44,7 @@ export default class Home extends Component {
                             <Link to="/newcard">New portfolio Card</Link>
                         </Navigation>
                     </Drawer>
-                    <Content>
+                    <Content style={{zIndex: 'initial'}}>
                         {this.props.children}
                     </Content>
                 </Layout>

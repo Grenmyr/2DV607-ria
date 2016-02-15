@@ -22,26 +22,29 @@ class PortfolioGrid extends Component {
     render(){
         return (
             <div>
-                {this.state.cardToShow && <PortfolioItem card={this.state.cardToShow}/> }
-                <div onClick={()=> {
-                    if(this.state.cardToShow){
-                        this.setState( {cardToShow: undefined})
-                    }
-                }}>
-                    <div style={styles.wrapper}>
-                <Grid>
-                    {this.props.portfolioCards.map((card, i) => {
+                {this.state.cardToShow && <div style={{position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', display: 'flex', zIndex: 5}}>
+                    <div style={cardStyles.portfolioOverlayWindow} onClick={()=> {
+                            if(this.state.cardToShow){
+                                this.setState({cardToShow: undefined})
+                            }
+                        }} />
+                    <PortfolioItem card={this.state.cardToShow}/>
+                </div>
+                }
+
+                <div style={styles.wrapper}>
+                    <Grid>
+                        {this.props.portfolioCards.map((card, i) => {
                             return (
-                              <PortfolioCard key={i} card={card} onClick={() => {
+                                <PortfolioCard key={i} card={card} onClick={() => {
                                 this.setState({
                                     cardToShow: card
                                 })
                               }}  />
                             )
                         })
-                    }
-                </Grid>
-                </div>
+                        }
+                    </Grid>
                 </div>
             </div>
         )

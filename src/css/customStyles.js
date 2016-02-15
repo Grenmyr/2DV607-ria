@@ -39,25 +39,20 @@ export const cardStyles = Object.freeze({
         fontSize:'105%'
     },
     portfolioItemPopupWindow: {
-        position: 'absolute',
-        marginLeft:'auto',
-        marginRight:'auto',
-        marginTop: 'auto',
-        left: 0,
-        right: 0,
+        margin:'auto',
         width: '80%',
         zIndex: 10,
         minWidth: '340px'
     },
     portfolioOverlayWindow:{
         display: 'block',
-        position: 'absolute',
+        position: 'fixed',
         top: '0%',
         left: '0%',
         width: '100%',
         height: '100%',
         backgroundColor: 'black',
-        zIndex:2,
+        zIndex:5,
         opacity:.80
     },
     sharedCardStyle: {
