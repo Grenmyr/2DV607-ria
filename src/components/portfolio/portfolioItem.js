@@ -11,6 +11,7 @@ export const PortfolioItem = ({card}) => {
         cardStyles.sharedCardStyle,
         customStyle("url("+card.image+")")
     );
+
     return <div style={popupStyle}>
         <Card style={cardStyle}>
             <CardActions style={cardStyle.cardActions}>
