@@ -5,12 +5,20 @@ import { PortfolioItem } from './portfolioItem';
 import { connect } from 'react-redux';
 import { cardStyles } from '../../css/customStyles';
 
-const styles = Object.freeze({
+const styles = Object.assign({
     wrapper: {
         display: 'flex',
         flexDirection: 'row',
-        alignItems: 'baseline',
-        opacity: 1
+        alignItems: 'baseline'
+    },
+    overLayWrapper: {
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        display: 'flex',
+        zIndex: 5
     }
 });
 
@@ -19,15 +27,16 @@ class PortfolioGrid extends Component {
         super(props);
         this.state = {};
     }
-    render(){
+
+    render() {
         return (
             <div>
-                {this.state.cardToShow && <div style={{position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', display: 'flex', zIndex: 5}}>
+                {this.state.cardToShow && <div style={styles.overLayWrapper}>
                     <div style={cardStyles.portfolioOverlayWindow} onClick={()=> {
                             if(this.state.cardToShow){
                                 this.setState({cardToShow: undefined})
                             }
-                        }} />
+                        }}/>
                     <PortfolioItem card={this.state.cardToShow}/>
                 </div>
                 }
@@ -40,7 +49,7 @@ class PortfolioGrid extends Component {
                                 this.setState({
                                     cardToShow: card
                                 })
-                              }}  />
+                              }}/>
                             )
                         })
                         }

@@ -111,7 +111,7 @@ const mapDispatchToProps = (dispatch) => {
             const portfolioCard = Object
                 .keys(submitAction)
                 .reduce((acc, key) => {
-                    acc[key] = submitAction[key].hasOwnProperty('refs') ? submitAction[key].refs.input.value:
+                    acc[key] = submitAction[key].hasOwnProperty('refs') ? submitAction[key].refs.input.value :
                         acc[key] = submitAction[key].files[0];
                     return acc;
                 }, {});
