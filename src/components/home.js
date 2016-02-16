@@ -4,12 +4,17 @@ import { cardStyles } from '../css/customStyles';
 import {Link} from 'react-router';
 
 const wrapper = {
-    width: '63%',
-    margin: 'auto'
+    display: 'flex',
+    justifyContent: 'center'
+};
+
+const customCardStyle = {
+    width:'80%'
 };
 
 const cardStyle = Object.assign(
-    cardStyles.sharedCardStyle
+    cardStyles.sharedCardStyle,
+    customCardStyle
 );
 
 const Home = () => (
