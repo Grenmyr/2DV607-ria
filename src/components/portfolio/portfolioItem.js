@@ -4,7 +4,7 @@ import { cardStyles } from '../../css/customStyles';
 import {Link} from 'react-router';
 
 const popupStyle = cardStyles.portfolioItemPopupWindow;
-const customStyle = url => ({width: '100%', height: 500, position: 'relative', background: url, zIndex: 6});
+const customStyle = url => ({width: '100%', height: 500, position: 'relative', background:url, zIndex: 6,backgroundPosition:'right bottom', backgroundRepeat:'no-repeat', backgroundColor:'white',backgroundSize:'330px'});
 
 export const PortfolioItem = ({card}) => {
     const cardStyle = Object.assign(
@@ -21,19 +21,25 @@ export const PortfolioItem = ({card}) => {
             </CardActions>
             <CardText>
                 <div style={cardStyle.cardRow}>
-                    <span style={cardStyle.cardRowTitle}>Employer: </span>{card.employer}
+
+                    <span style={cardStyle.cardRowTitle}>Employer: </span>
+                    <span style={cardStyle.cardText}>{card.employer}</span>
                 </div>
                 <div style={cardStyle.cardRow}>
-                    <span style={cardStyle.cardRowTitle}>Employer url: </span>{card.employerUrl}
+                    <span style={cardStyle.cardRowTitle}>Employer url: </span>
+                    <span style={cardStyle.cardText}>{card.employerUrl}</span>
                 </div>
                 <div style={cardStyle.cardRow}>
-                    <span style={cardStyle.cardRowTitle}>Contact: </span>{card.employerContact}
+                    <span style={cardStyle.cardRowTitle}>Contact: </span>
+                    <span style={cardStyle.cardText}>{card.employerContact}</span>
                 </div>
                 <div style={cardStyle.cardRow}>
-                    <span style={cardStyle.cardRowTitle}>Description: </span>{card.text}
+                    <span style={cardStyle.cardRowTitle}>Description: </span>
+                    <span style={cardStyle.cardText}>{card.text}</span>
                 </div>
                 <div style={cardStyle.cardRow}>
-                    <span style={cardStyle.cardRowTitle}>Techniques: </span>{card.techniques}
+                    <span style={cardStyle.cardRowTitle}>Techniques: </span>
+                    <span style={cardStyle.cardText}>{card.techniques}</span>
                 </div>
             </CardText>
         </Card>

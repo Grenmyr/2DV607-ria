@@ -44897,7 +44897,7 @@
 	
 	var popupStyle = _customStyles.cardStyles.portfolioItemPopupWindow;
 	var customStyle = function customStyle(url) {
-	    return { width: '100%', height: 500, position: 'relative', background: url, zIndex: 6 };
+	    return { width: '100%', height: 500, position: 'relative', background: url, zIndex: 6, backgroundPosition: 'right bottom', backgroundRepeat: 'no-repeat', backgroundColor: 'white', backgroundSize: '330px' };
 	};
 	
 	var PortfolioItem = exports.PortfolioItem = function PortfolioItem(_ref) {
@@ -44935,7 +44935,11 @@
 	                        { style: cardStyle.cardRowTitle },
 	                        'Employer: '
 	                    ),
-	                    card.employer
+	                    _react2.default.createElement(
+	                        'span',
+	                        { style: cardStyle.cardText },
+	                        card.employer
+	                    )
 	                ),
 	                _react2.default.createElement(
 	                    'div',
@@ -44945,7 +44949,11 @@
 	                        { style: cardStyle.cardRowTitle },
 	                        'Employer url: '
 	                    ),
-	                    card.employerUrl
+	                    _react2.default.createElement(
+	                        'span',
+	                        { style: cardStyle.cardText },
+	                        card.employerUrl
+	                    )
 	                ),
 	                _react2.default.createElement(
 	                    'div',
@@ -44955,7 +44963,11 @@
 	                        { style: cardStyle.cardRowTitle },
 	                        'Contact: '
 	                    ),
-	                    card.employerContact
+	                    _react2.default.createElement(
+	                        'span',
+	                        { style: cardStyle.cardText },
+	                        card.employerContact
+	                    )
 	                ),
 	                _react2.default.createElement(
 	                    'div',
@@ -44965,7 +44977,11 @@
 	                        { style: cardStyle.cardRowTitle },
 	                        'Description: '
 	                    ),
-	                    card.text
+	                    _react2.default.createElement(
+	                        'span',
+	                        { style: cardStyle.cardText },
+	                        card.text
+	                    )
 	                ),
 	                _react2.default.createElement(
 	                    'div',
@@ -44975,7 +44991,11 @@
 	                        { style: cardStyle.cardRowTitle },
 	                        'Techniques: '
 	                    ),
-	                    card.techniques
+	                    _react2.default.createElement(
+	                        'span',
+	                        { style: cardStyle.cardText },
+	                        card.techniques
+	                    )
 	                )
 	            )
 	        )
