@@ -8,13 +8,10 @@ const wrapper = {
     justifyContent: 'center'
 };
 
-const customCardStyle = {
-    width:'80%'
-};
 
 const cardStyle = Object.assign(
     cardStyles.sharedCardStyle,
-    customCardStyle
+    {width:'80%'}
 );
 
 const Home = () => (

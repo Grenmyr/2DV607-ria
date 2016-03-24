@@ -25,6 +25,10 @@ export const cardStyles = Object.freeze({
         background: `url(http://www.getmdl.io/assets/demos/dog.png)
                         bottom right 15% no-repeat #46B6AC`
     },
+    contactBackground: {
+        background: `url(https://media.licdn.com/mpr/mpr/shrink_100_100/AAEAAQAAAAAAAAVSAAAAJGZlZDJkNWEzLWI4MmItNDZiMC05ZDlhLThiYzAyMGJlYTRmNQ.jpg)
+         right no-repeat #46B6AC`
+    },
     cardSubTitle: {
         fontWeight:700,
         fontSize:'105%',

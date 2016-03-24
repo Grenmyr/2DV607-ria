@@ -35266,11 +35266,7 @@
 	    justifyContent: 'center'
 	};
 	
-	var customCardStyle = {
-	    width: '80%'
-	};
-	
-	var cardStyle = Object.assign(_customStyles.cardStyles.sharedCardStyle, customCardStyle);
+	var cardStyle = Object.assign(_customStyles.cardStyles.sharedCardStyle, { width: '80%' });
 	
 	var Home = function Home() {
 	    return _react2.default.createElement(
@@ -35385,6 +35381,9 @@
 	    },
 	    cardTitle: {
 	        background: 'url(http://www.getmdl.io/assets/demos/dog.png)\n                        bottom right 15% no-repeat #46B6AC'
+	    },
+	    contactBackground: {
+	        background: 'url(https://media.licdn.com/mpr/mpr/shrink_100_100/AAEAAQAAAAAAAAVSAAAAJGZlZDJkNWEzLWI4MmItNDZiMC05ZDlhLThiYzAyMGJlYTRmNQ.jpg)\n         right no-repeat #46B6AC'
 	    },
 	    cardSubTitle: {
 	        fontWeight: 700,
@@ -44579,55 +44578,98 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var styles = Object.freeze({
-	    card: _customStyles.cardStyles.card,
+	    card: {
+	        width: '62%',
+	        height: 300
+	    },
+	    cardText: _customStyles.cardStyles.sharedCardStyle.cardText,
 	    cardTitle: Object.assign({
-	        color: '#fff'
-	    }, _customStyles.cardStyles.cardTitle),
+	        color: _customStyles.cardStyles.sharedCardStyle.cardTitle.color
+	    }, _customStyles.cardStyles.contactBackground),
 	    cardRow: _customStyles.cardStyles.cardRow,
 	    cardRowTitle: _customStyles.cardStyles.cardRowTitle
 	});
 	
+	var wrapper = {
+	    display: 'flex',
+	    justifyContent: 'center'
+	};
+	
 	var Contact = exports.Contact = function Contact() {
 	    return _react2.default.createElement(
-	        _reactMdl.Card,
-	        { shadow: 0, style: styles.card },
+	        'div',
+	        { style: wrapper },
 	        _react2.default.createElement(
-	            _reactMdl.CardTitle,
-	            { expand: true, style: styles.cardTitle },
-	            'Contacts'
-	        ),
-	        _react2.default.createElement(
-	            _reactMdl.CardText,
-	            null,
+	            _reactMdl.Card,
+	            { shadow: 0, style: styles.card },
 	            _react2.default.createElement(
-	                'div',
-	                { style: styles.cardRow },
-	                _react2.default.createElement(
-	                    'span',
-	                    { style: styles.cardRowTitle },
-	                    'Email: '
-	                ),
-	                'david.grenmyr@hotmail.com'
+	                _reactMdl.CardTitle,
+	                { expand: true, style: styles.cardTitle },
+	                'Contact me'
 	            ),
 	            _react2.default.createElement(
-	                'div',
-	                { style: styles.cardRow },
+	                _reactMdl.CardText,
+	                { style: styles.cardText },
 	                _react2.default.createElement(
-	                    'span',
-	                    { style: styles.cardRowTitle },
-	                    'Phone: '
+	                    'div',
+	                    { style: styles.cardRow },
+	                    _react2.default.createElement(
+	                        'span',
+	                        { style: styles.cardRowTitle },
+	                        'Email: '
+	                    ),
+	                    'david.grenmyr@hotmail.com'
 	                ),
-	                ' 070 259 6668'
-	            ),
-	            _react2.default.createElement(
-	                'div',
-	                { style: styles.cardRow },
 	                _react2.default.createElement(
-	                    'span',
-	                    { style: styles.cardRowTitle },
-	                    'Skype: '
+	                    'div',
+	                    { style: styles.cardRow },
+	                    _react2.default.createElement(
+	                        'span',
+	                        { style: styles.cardRowTitle },
+	                        'Phone: '
+	                    ),
+	                    ' 070 259 6668'
 	                ),
-	                ' david.grenmyr'
+	                _react2.default.createElement(
+	                    'div',
+	                    { style: styles.cardRow },
+	                    _react2.default.createElement(
+	                        'span',
+	                        { style: styles.cardRowTitle },
+	                        'Skype: '
+	                    ),
+	                    ' david.grenmyr'
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { style: styles.cardRow },
+	                    _react2.default.createElement(
+	                        'span',
+	                        { style: styles.cardRowTitle },
+	                        'Github: '
+	                    ),
+	                    ' ',
+	                    _react2.default.createElement(
+	                        'a',
+	                        { target: '_blank', href: 'https://github.com/Grenmyr' },
+	                        'Min Github profil'
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { style: styles.cardRow },
+	                    _react2.default.createElement(
+	                        'span',
+	                        { style: styles.cardRowTitle },
+	                        'Github: '
+	                    ),
+	                    ' ',
+	                    _react2.default.createElement(
+	                        'a',
+	                        { target: '_blank', href: 'https://www.linkedin.com/in/david-grenmyr-6a4129102' },
+	                        'Min LinkedIn profil'
+	                    )
+	                )
 	            )
 	        )
 	    );
