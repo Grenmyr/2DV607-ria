@@ -11,7 +11,7 @@ const wrapper = {
 
 const cardStyle = Object.assign(
     cardStyles.sharedCardStyle,
-    {width:'80%'}
+    {width: '90%', height: 300}
 );
 
 const Home = () => (

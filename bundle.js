@@ -35266,7 +35266,9 @@
 	    justifyContent: 'center'
 	};
 	
-	var cardStyle = Object.assign(_customStyles.cardStyles.sharedCardStyle, { width: '80%' });
+	var cardStyle = Object.assign(_customStyles.cardStyles.sharedCardStyle, { width: '90%',
+	    maxWidth: 500,
+	    height: 300 });
 	
 	var Home = function Home() {
 	    return _react2.default.createElement(
@@ -44506,47 +44508,56 @@
 	    cardRowTitle: _customStyles.cardStyles.cardRowTitle
 	});
 	
+	var wrapper = {
+	    display: 'flex',
+	    justifyContent: 'center'
+	};
+	
 	var About = exports.About = function About() {
 	    return _react2.default.createElement(
-	        _reactMdl.Card,
-	        { shadow: 0, style: styles.card },
+	        'div',
+	        { style: wrapper },
 	        _react2.default.createElement(
-	            _reactMdl.CardTitle,
-	            { expand: true, style: styles.cardTitle },
-	            'About David Grenmyr'
-	        ),
-	        _react2.default.createElement(
-	            _reactMdl.CardText,
-	            null,
+	            _reactMdl.Card,
+	            { shadow: 0, style: styles.card },
 	            _react2.default.createElement(
-	                'div',
-	                { style: styles.cardRow },
-	                _react2.default.createElement(
-	                    'span',
-	                    { style: styles.cardRowTitle },
-	                    'Social: '
-	                ),
-	                ' I am 33 years old blessed with a lovely wife and 2 children 4 and 7 years old.'
+	                _reactMdl.CardTitle,
+	                { expand: true, style: styles.cardTitle },
+	                'About me'
 	            ),
 	            _react2.default.createElement(
-	                'div',
-	                { style: styles.cardRow },
+	                _reactMdl.CardText,
+	                null,
 	                _react2.default.createElement(
-	                    'span',
-	                    { style: styles.cardRowTitle },
-	                    'Interests: '
+	                    'div',
+	                    { style: styles.cardRow },
+	                    _react2.default.createElement(
+	                        'span',
+	                        { style: styles.cardRowTitle },
+	                        'Profile: '
+	                    ),
+	                    ' Jag är 33 år gammal, gift och två barn, fyra och sju år gamla..'
 	                ),
-	                '  Programming both backend and frontend. My favorite environments are .NET with C# and Javascript with Node or React.'
-	            ),
-	            _react2.default.createElement(
-	                'div',
-	                { style: styles.cardRow },
 	                _react2.default.createElement(
-	                    'span',
-	                    { style: styles.cardRowTitle },
-	                    'Hobbies: '
+	                    'div',
+	                    { style: styles.cardRow },
+	                    _react2.default.createElement(
+	                        'span',
+	                        { style: styles.cardRowTitle },
+	                        'Professional interests: '
+	                    ),
+	                    ' Programmering både backend och  frontend. Mina favorit miljöer är .NET med C# och Javascript med Node som backend och React +Redux/Flux frontend.'
 	                ),
-	                '  Gardening, especially growing vegetables, berries and fruits.'
+	                _react2.default.createElement(
+	                    'div',
+	                    { style: styles.cardRow },
+	                    _react2.default.createElement(
+	                        'span',
+	                        { style: styles.cardRowTitle },
+	                        'Unprofessional interests: '
+	                    ),
+	                    '  Gräva i mitt trädgårdsland, skörda jordgubbar, odla fantastisk spenat, plocka hallon och plocka goda frukter.'
+	                )
 	            )
 	        )
 	    );
@@ -44579,7 +44590,8 @@
 	
 	var styles = Object.freeze({
 	    card: {
-	        width: '62%',
+	        width: '90%',
+	        maxWidth: 500,
 	        height: 300
 	    },
 	    cardText: _customStyles.cardStyles.sharedCardStyle.cardText,

@@ -2,6 +2,7 @@ const primaryColor = '#FFF';
 const accentColor = '#536DFE';
 
 export const cardStyles = Object.freeze({
+    accentColor: accentColor,
     card: {
         width: 320,
         height: 320
