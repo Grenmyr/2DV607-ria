@@ -25,7 +25,7 @@ export default class Home extends Component {
         return (
             <div>
                 <Layout style={styles.wrapper}>
-                    <Header transparent title="Title" style={styles.header}>
+                    <Header transparent title="Portfolio: David Grenmyr" style={styles.header}>
                         <Navigation>
                             {this.props.loginState.isLoggedIn ? (
                                 <Link to="/auth">Logout</Link>

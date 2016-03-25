@@ -3,6 +3,7 @@ const accentColor = '#536DFE';
 
 export const cardStyles = Object.freeze({
     accentColor: accentColor,
+    primaryColor: primaryColor,
     card: {
         width: 320,
         height: 320
@@ -45,7 +46,8 @@ export const cardStyles = Object.freeze({
     },
     portfolioItemPopupWindow: {
         margin:'auto',
-        width: '80%',
+        maxWidth: 800,
+        width:'90%',
         zIndex: 10,
         minWidth: '340px'
     },

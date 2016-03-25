@@ -30913,7 +30913,7 @@
 	                    { style: styles.wrapper },
 	                    _react2.default.createElement(
 	                        _reactMdl.Header,
-	                        { transparent: true, title: 'Title', style: styles.header },
+	                        { transparent: true, title: 'Portfolio: David Grenmyr', style: styles.header },
 	                        _react2.default.createElement(
 	                            _reactMdl.Navigation,
 	                            null,
@@ -35266,9 +35266,7 @@
 	    justifyContent: 'center'
 	};
 	
-	var cardStyle = Object.assign(_customStyles.cardStyles.sharedCardStyle, { width: '90%',
-	    maxWidth: 500,
-	    height: 300 });
+	var cardStyle = Object.assign(_customStyles.cardStyles.sharedCardStyle, { width: '90%', maxWidth: 500 });
 	
 	var Home = function Home() {
 	    return _react2.default.createElement(
@@ -35362,6 +35360,8 @@
 	var accentColor = '#536DFE';
 	
 	var cardStyles = exports.cardStyles = Object.freeze({
+	    accentColor: accentColor,
+	    primaryColor: primaryColor,
 	    card: {
 	        width: 320,
 	        height: 320
@@ -35402,7 +35402,8 @@
 	    },
 	    portfolioItemPopupWindow: {
 	        margin: 'auto',
-	        width: '80%',
+	        maxWidth: 800,
+	        width: '90%',
 	        zIndex: 10,
 	        minWidth: '340px'
 	    },
@@ -44499,11 +44500,15 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var styles = Object.freeze({
-	    card: _customStyles.cardStyles.card,
+	    card: {
+	        width: '90%',
+	        height: 400,
+	        maxWidth: 500
+	    },
+	    cardText: _customStyles.cardStyles.sharedCardStyle.cardText,
 	    cardTitle: Object.assign({
-	        alignItems: 'flex-start',
-	        color: '#fff'
-	    }, _customStyles.cardStyles.cardTitle),
+	        color: _customStyles.cardStyles.sharedCardStyle.cardTitle.color
+	    }, _customStyles.cardStyles.contactBackground),
 	    cardRow: _customStyles.cardStyles.cardRow,
 	    cardRowTitle: _customStyles.cardStyles.cardRowTitle
 	});
@@ -44523,20 +44528,20 @@
 	            _react2.default.createElement(
 	                _reactMdl.CardTitle,
 	                { expand: true, style: styles.cardTitle },
-	                'About me'
+	                'Om mig'
 	            ),
 	            _react2.default.createElement(
 	                _reactMdl.CardText,
-	                null,
+	                { style: styles.cardText },
 	                _react2.default.createElement(
 	                    'div',
 	                    { style: styles.cardRow },
 	                    _react2.default.createElement(
 	                        'span',
 	                        { style: styles.cardRowTitle },
-	                        'Profile: '
+	                        'Profil: '
 	                    ),
-	                    ' Jag är 33 år gammal, gift och två barn, fyra och sju år gamla..'
+	                    ' Jag är 33 år gammal, gift och två barn, fyra och sju år gamla.'
 	                ),
 	                _react2.default.createElement(
 	                    'div',
@@ -44544,7 +44549,7 @@
 	                    _react2.default.createElement(
 	                        'span',
 	                        { style: styles.cardRowTitle },
-	                        'Professional interests: '
+	                        'Utvecklingsmiljöer: '
 	                    ),
 	                    ' Programmering både backend och  frontend. Mina favorit miljöer är .NET med C# och Javascript med Node som backend och React +Redux/Flux frontend.'
 	                ),
@@ -44554,7 +44559,7 @@
 	                    _react2.default.createElement(
 	                        'span',
 	                        { style: styles.cardRowTitle },
-	                        'Unprofessional interests: '
+	                        'Hobby: '
 	                    ),
 	                    '  Gräva i mitt trädgårdsland, skörda jordgubbar, odla fantastisk spenat, plocka hallon och plocka goda frukter.'
 	                )
@@ -44591,13 +44596,18 @@
 	var styles = Object.freeze({
 	    card: {
 	        width: '90%',
-	        maxWidth: 500,
-	        height: 300
+	        height: 300,
+	        maxWidth: 500
 	    },
 	    cardText: _customStyles.cardStyles.sharedCardStyle.cardText,
+	    cardActions: Object.assign({
+	        background: 'url(https://media.licdn.com/mpr/mpr/shrink_100_100/AAEAAQAAAAAAAAVSAAAAJGZlZDJkNWEzLWI4MmItNDZiMC05ZDlhLThiYzAyMGJlYTRmNQ.jpg)\n         right no-repeat #46B6AC',
+	        backgroundColor: _customStyles.cardStyles.accentColor,
+	        height: 100
+	    }),
 	    cardTitle: Object.assign({
 	        color: _customStyles.cardStyles.sharedCardStyle.cardTitle.color
-	    }, _customStyles.cardStyles.contactBackground),
+	    }),
 	    cardRow: _customStyles.cardStyles.cardRow,
 	    cardRowTitle: _customStyles.cardStyles.cardRowTitle
 	});
@@ -44615,9 +44625,13 @@
 	            _reactMdl.Card,
 	            { shadow: 0, style: styles.card },
 	            _react2.default.createElement(
-	                _reactMdl.CardTitle,
-	                { expand: true, style: styles.cardTitle },
-	                'Contact me'
+	                _reactMdl.CardActions,
+	                { style: styles.cardActions },
+	                _react2.default.createElement(
+	                    _reactMdl.CardTitle,
+	                    { expand: true, style: styles.cardTitle },
+	                    'Contact me'
+	                )
 	            ),
 	            _react2.default.createElement(
 	                _reactMdl.CardText,
@@ -44863,60 +44877,6 @@
 	                {
 	                    style: styles.cardTitle },
 	                card.projectTitle
-	            ),
-	            _react2.default.createElement(
-	                _reactMdl.CardText,
-	                null,
-	                _react2.default.createElement(
-	                    'div',
-	                    { style: styles.cardRow },
-	                    _react2.default.createElement(
-	                        'span',
-	                        { style: styles.cardRowTitle },
-	                        'Employer: '
-	                    ),
-	                    card.employer
-	                ),
-	                _react2.default.createElement(
-	                    'div',
-	                    { style: styles.cardRow },
-	                    _react2.default.createElement(
-	                        'span',
-	                        { style: styles.cardRowTitle },
-	                        'Employer url: '
-	                    ),
-	                    card.employerUrl
-	                ),
-	                _react2.default.createElement(
-	                    'div',
-	                    { style: styles.cardRow },
-	                    _react2.default.createElement(
-	                        'span',
-	                        { style: styles.cardRowTitle },
-	                        'Contact: '
-	                    ),
-	                    card.employerContact
-	                ),
-	                _react2.default.createElement(
-	                    'div',
-	                    { style: styles.cardRow },
-	                    _react2.default.createElement(
-	                        'span',
-	                        { style: styles.cardRowTitle },
-	                        'Description: '
-	                    ),
-	                    card.text
-	                ),
-	                _react2.default.createElement(
-	                    'div',
-	                    { style: styles.cardRow },
-	                    _react2.default.createElement(
-	                        'span',
-	                        { style: styles.cardRowTitle },
-	                        'Techniques: '
-	                    ),
-	                    card.techniques
-	                )
 	            )
 	        )
 	    );
@@ -44951,13 +44911,21 @@
 	
 	var popupStyle = _customStyles.cardStyles.portfolioItemPopupWindow;
 	var customStyle = function customStyle(url) {
-	    return { width: '100%', height: 500, position: 'relative', background: url, zIndex: 6, backgroundPosition: 'right bottom', backgroundRepeat: 'no-repeat', backgroundColor: 'white', backgroundSize: '330px' };
+	    return { width: '100%', height: 500, margin: 'auto', position: 'relative', background: url, zIndex: 6, backgroundPosition: 'right bottom', backgroundRepeat: 'no-repeat', backgroundColor: 'white', backgroundSize: '400px' };
 	};
 	
 	var PortfolioItem = exports.PortfolioItem = function PortfolioItem(_ref) {
 	    var card = _ref.card;
 	
-	    var cardStyle = Object.assign(_customStyles.cardStyles.sharedCardStyle, customStyle("url(" + card.image + ")"));
+	    var cardStyle = Object.assign({ titleSpan: { color: _customStyles.cardStyles.primaryColor, fontSize: '24px', fontWeight: '500' },
+	        cardActions: { height: '120px', background: _customStyles.cardStyles.accentColor },
+	        cardText: {
+	            fontWeight: 700,
+	            fontSize: '105%',
+	            textColor: _customStyles.cardStyles.accentColor
+	        },
+	        cardTitle: { color: _customStyles.cardStyles.primaryColor },
+	        span: { color: _customStyles.cardStyles.primaryColor, fontSize: '24px', fontWeight: '500' } }, customStyle("url(" + card.image + ")"));
 	
 	    return _react2.default.createElement(
 	        'div',

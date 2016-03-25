@@ -4,11 +4,19 @@ import { cardStyles } from '../../css/customStyles';
 import {Link} from 'react-router';
 
 const popupStyle = cardStyles.portfolioItemPopupWindow;
-const customStyle = url => ({width: '100%', height: 500, position: 'relative', background:url, zIndex: 6,backgroundPosition:'right bottom', backgroundRepeat:'no-repeat', backgroundColor:'white',backgroundSize:'330px'});
+const customStyle = url => ({width:'100%',height:500,margin: 'auto', position: 'relative', background:url, zIndex: 6,backgroundPosition:'right bottom', backgroundRepeat:'no-repeat', backgroundColor:'white',backgroundSize:'400px'});
 
 export const PortfolioItem = ({card}) => {
     const cardStyle = Object.assign(
-        cardStyles.sharedCardStyle,
+        {titleSpan: {color: cardStyles.primaryColor, fontSize: '24px', fontWeight: '500'},
+            cardActions: {height: '120px', background: cardStyles.accentColor},
+            cardText: {
+                fontWeight: 700,
+                fontSize: '105%',
+                textColor: cardStyles.accentColor
+            },
+            cardTitle: {color: cardStyles.primaryColor},
+            span: {color: cardStyles.primaryColor, fontSize: '24px', fontWeight: '500'},},
         customStyle("url("+card.image+")")
     );
 

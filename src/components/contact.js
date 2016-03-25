@@ -3,10 +3,10 @@ import { Card, CardTitle, CardText, CardActions, Button } from 'react-mdl';
 import { cardStyles } from '../css/customStyles';
 
 const styles = Object.freeze({
-    maxWidth: 500,
     card: {
         width: '90%',
-        height: 300
+        height: 300,
+        maxWidth:500
     },
     cardText: cardStyles.sharedCardStyle.cardText,
     cardActions: Object.assign({
@@ -37,7 +37,7 @@ export const Contact = () => (
                 <CardText style={styles.cardText}>
 
                     <div style={styles.cardRow}>
-                        <span style={styles.cardRowTitle}>Email: </span>david.grenmyr@hotmail.com
+                        <span style={styles.cardRowTitle}>Email: </span>david.grenmyr@gmail.com
                     </div>
 
                     <div style={styles.cardRow}>

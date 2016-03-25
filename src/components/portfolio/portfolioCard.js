@@ -20,23 +20,6 @@ export const PortfolioCard = ({card, onClick}) => {
         <Card>
             <CardTitle
                 style={styles.cardTitle}>{card.projectTitle}</CardTitle>
-            <CardText>
-                <div style={styles.cardRow}>
-                    <span style={styles.cardRowTitle}>Employer: </span>{card.employer}
-                </div>
-                <div style={styles.cardRow}>
-                    <span style={styles.cardRowTitle}>Employer url: </span>{card.employerUrl}
-                </div>
-                <div style={styles.cardRow}>
-                    <span style={styles.cardRowTitle}>Contact: </span>{card.employerContact}
-                </div>
-                <div style={styles.cardRow}>
-                    <span style={styles.cardRowTitle}>Description: </span>{card.text}
-                </div>
-                <div style={styles.cardRow}>
-                    <span style={styles.cardRowTitle}>Techniques: </span>{card.techniques}
-                </div>
-            </CardText>
         </Card>
     </div>
 };
